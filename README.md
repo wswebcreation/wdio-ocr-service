@@ -1,6 +1,8 @@
 # OCR Services
 A WebdriverIO service that is using Tesseract OCR for Appium Native App tests.
 
+[![NPM](https://nodei.co/npm/wdio-ocr-service.png)](https://nodei.co/npm/wdio-ocr-service/)
+
 - [Background](#background)
   - [How does it work](#how-does-it-work)
 - [Installation](#installation)

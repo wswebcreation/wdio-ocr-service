@@ -13,6 +13,8 @@ A WebdriverIO service that is using Tesseract OCR for Appium Native App tests.
   - [`ocrSetValue`](#ocrsetvalue)
   - [`ocrWaitForTextDisplayed`](#ocrwaitfortextdisplayed)
 - [Test Execution Optimization](#test-execution-optimization)
+- [FAQ](#faq)
+- [TODO](#todo)
 
 ## Background
 Sometimes it can be hard to find an element in a native app with the default
@@ -263,7 +265,7 @@ processing.
 **BUT....**, there are ways to optimize the execution time. Let's take the following test script
 
 <details>
-<summary>Click to expand the test script.</summary>
+<summary>Click to expand and see the test script.</summary>
 
 ```js
 describe('My first OCR test', () => {
@@ -290,7 +292,7 @@ When you execute this for the first time on a local Android emulator and a local
 following results.
 
 <details>
-<summary>Click to expand to see the logs.</summary>
+<summary>Click to expand and see the logs.</summary>
 
 ```log
 [emulator-5554 Android 10 #0-0] Spec: /tests/e2e/specs/ocr.spec.ts
@@ -318,7 +320,7 @@ for certain commands (see [here](./README.md#commands) which commands support th
 script to this:
 
 <details>
-<summary>Click to expand to see the optimized test script!</summary>
+<summary>Click to expand and see the optimized test script.</summary>
 
 ```js
 describe('My OCR first test', () => {
@@ -344,8 +346,9 @@ describe('My OCR first test', () => {
 Then you will see a different execution time.
 
 <details>
-<summary>Click to expand the local execution logs with re-using processed images enabled!</summary>
-```logs
+<summary>Click to expand and see the local execution logs with re-using processed images enabled.</summary>
+
+```log
 [iPhone 11 iOS 14.2 #1-0] Spec: /tests/e2e/specs/ocr.spec.ts
 [iPhone 11 iOS 14.2 #1-0] Running: iPhone 11 on iOS 14.2 executing /apps/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.zip
 [iPhone 11 iOS 14.2 #1-0] Session ID: 7522423c-7b72-4c60-915f-eccd1caed11d
@@ -374,8 +377,9 @@ found [here](https://tesseract-ocr.github.io/tessdoc/Installation.html)). You ca
 script using a local installation of Tesseract below.
 
 <details>
-<summary>Click to expand to see the local Tesseract execution logs!</summary>
-```logs
+<summary>Click to expand and see the local Tesseract execution logs.</summary>
+
+```log
 [iPhone 11 iOS 14.2 #1-0] Spec: /tests/e2e/specs/ocr.spec.ts
 [iPhone 11 iOS 14.2 #1-0] Running: iPhone 11 on iOS 14.2 executing /apps/iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.zip
 [iPhone 11 iOS 14.2 #1-0] Session ID: 27cf6492-c46f-40da-b88d-0cc7fe967234
@@ -395,3 +399,19 @@ script using a local installation of Tesseract below.
 [emulator-5554 Android 10 #0-0] 1 passing (17.2s)
 ```
 </details>
+
+## FAQ
+### Can I use the commands from this service with the default WebdriverIO Mobile commands/selectors?
+Yes, you can combine the commands to make your script even more powerful! The advice is to use the default WebdriverIO
+mobile commands/selectors as much as possible. You can inspect your app with
+[Appium Desktop](https://github.com/appium/appium-desktop), but when you can find a unique selector, or your selector
+will become to brittle then the commands from this service can definitely help you.
+
+### Can I fully automate my app with the ocr commands provided by this service?
+I've never done it, but in theory it should be possible. Please let me know if you succeed with that ☺️.
+
+## TODO:
+- [ ] provide language as an option, now English is the default
+- [ ] create contribution docs
+- [ ] provide the option to OCR in *restricted* areas
+- [ ] Build GitHub pages with a sample and instructions (?)

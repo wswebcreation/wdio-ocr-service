@@ -1,0 +1,48 @@
+{
+  "name": "wdio-ocr-service",
+  "version": "0.1.0",
+  "description": "A WebdriverIO service that is using Tesseract OCR for Appium Native App tests.",
+  "main": "./build",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "compile": "tsc",
+    "lint": "eslint src",
+    "test.e2e.local": "npx wdio tests/e2e/configs/wdio.local.conf.js",
+    "test.e2e.sauce": "npx wdio tests/e2e/configs/wdio.saucelabs.conf.js",
+    "watch": "npm run compile -- -w",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "appium",
+    "tesseract",
+    "OCR",
+    "native apps"
+  ],
+  "author": "wswebcreation",
+  "license": "MIT",
+  "dependencies": {
+    "@wdio/logger": "^7.0.0",
+    "fuse.js": "^6.4.6",
+    "jimp": "^0.16.1",
+    "node-tesseract-ocr": "^2.0.0",
+    "pureimage": "^0.2.7",
+    "tesseract.js": "^2.1.4",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@types/xml2js": "^0.4.8",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "@wdio/sync": "^7.2.3",
+    "@wdio/types": "^7.2.1",
+    "eslint": "^7.23.0",
+    "husky": "^5.2.0",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}

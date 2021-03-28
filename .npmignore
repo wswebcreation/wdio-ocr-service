@@ -1,0 +1,5 @@
+**/*.traineddata
+**/node_modules
+**/.tmp
+**/*lock
+**/jest.config.js

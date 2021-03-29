@@ -1,8 +1,10 @@
-import { ScreenSize } from '../types/types'
+import { Rectangles, ScreenSize } from '../types/types'
 import ocrKeys from '../utils/ocrKeys'
 import ocrClickOnText from './ocrClickOnText'
 
 interface OcrSetValueOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   isTesseractAvailable: boolean;
   reuseOcr: boolean;
   ocrImagesPath: string;
@@ -13,6 +15,8 @@ interface OcrSetValueOptions {
 
 export default async function ocrSetValue(options: OcrSetValueOptions): Promise<void> {
   const {
+    androidRectangles,
+    iOSRectangles,
     isTesseractAvailable,
     reuseOcr,
     ocrImagesPath,
@@ -22,20 +26,26 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
   } = options
 
   await ocrClickOnText({
+    androidRectangles,
+    iOSRectangles,
     isTesseractAvailable,
     ocrImagesPath,
     reuseOcr,
     screenSize,
     text,
   })
-  await driver.waitUntil(async () => driver.isKeyboardShown(), {
-    timeout: 15000,
-    timeoutMsg: 'Keyboard was not hidden',
-  })
+  await driver.waitUntil(
+    async () => driver.isKeyboardShown(),
+    {
+      timeout: 15000,
+      timeoutMsg: 'Keyboard was not hidden',
+    })
   await ocrKeys(value)
   await driver.hideKeyboard()
-  await driver.waitUntil(async () => !(await driver.isKeyboardShown()), {
-    timeout: 15000,
-    timeoutMsg: 'Keyboard is still shown',
-  })
+  await driver.waitUntil(
+    async () => !(await driver.isKeyboardShown()),
+    {
+      timeout: 15000,
+      timeoutMsg: 'Keyboard is still shown',
+    })
 }

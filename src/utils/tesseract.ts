@@ -26,9 +26,7 @@ interface GetOcrDataOptions {
   filePath: string;
 }
 
-export async function getNodeOcrData(
-  options: GetOcrDataOptions
-): Promise<GetOcrData> {
+export async function getNodeOcrData(options: GetOcrDataOptions): Promise<GetOcrData|Error> {
   try {
     const { filePath } = options
     const jsonSingleWords: Words[] = []
@@ -47,20 +45,20 @@ export async function getNodeOcrData(
       tessjs_create_unlv: '0',
       tessjs_create_osd: '0',
     })
-    const {
-      data: { text, hocr },
-    } = await worker.recognize(filePath)
+    const { data: { text, hocr } } = await worker.recognize(filePath)
 
     // @ts-ignore
     parseString(hocr, (error: Error, data: any) => {
       if (error) {
-        throw Error(
-          `An error happened when parsing the getNodeOcrData, see: ${error}`
-        )
+        throw Error(`An error happened when parsing the getNodeOcrData, see: ${error}`)
       }
 
       composedBlocks = data.div.div
     })
+
+    if (!composedBlocks || composedBlocks.length === 0){
+      throw Error('No text was found for the OCR, please verify the stored image.')
+    }
 
     // This is for single words
     // @ts-ignore
@@ -124,15 +122,11 @@ export async function getNodeOcrData(
       text,
     }
   } catch (error) {
-    throw Error(
-      `An error happened when parsing the getNodeOcrData, see: ${error}`
-    )
+    throw Error(`An error happened when parsing the getNodeOcrData, see: ${error}`)
   }
 }
 
-export async function getSystemOcrData(
-  options: GetOcrDataOptions
-): Promise<GetOcrData> {
+export async function getSystemOcrData(options: GetOcrDataOptions): Promise<GetOcrData|Error> {
   try {
     const { filePath } = options
     const jsonSingleWords: Words[] = []
@@ -149,14 +143,16 @@ export async function getSystemOcrData(
 
     parseString(result, (error: Error, data) => {
       if (error) {
-        throw Error(
-          `An error happened when parsing the getSystemOcrData, see: ${error}`
-        )
+        throw Error(`An error happened when parsing the getSystemOcrData, see: ${error}`)
       }
 
       text = data.alto.Layout[0]._
       composedBlocks = data.alto.Layout[0].Page[0].PrintSpace[0].ComposedBlock
     })
+
+    if (!composedBlocks || composedBlocks.length === 0){
+      throw Error('No text was found for the OCR, please verify the stored image.')
+    }
 
     // This is for single words
     // @ts-ignore
@@ -219,9 +215,7 @@ export async function getSystemOcrData(
       text,
     }
   } catch (error) {
-    throw Error(
-      `An error happened when parsing the getSystemOcrData, see: ${error}`
-    )
+    throw Error(`An error happened when parsing the getSystemOcrData, see: ${error}`)
   }
 }
 

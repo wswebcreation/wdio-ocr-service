@@ -3,6 +3,8 @@ import { getDprPositions } from './index'
 import { Line, Rectangles } from '../types/types'
 
 interface OcrGetTextPositionsOptions {
+  androidRectangles?:Rectangles;
+  iOSRectangles?:Rectangles;
   isTesseractAvailable: boolean;
   ocrImagesPath: string;
   reuseOcr: boolean;

@@ -7,6 +7,8 @@ import { SERVICE_NAME } from '../utils/constants'
 const log = logger(SERVICE_NAME)
 
 interface OcrGetElementPositionByTextOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   isTesseractAvailable: boolean;
   ocrImagesPath: string;
   reuseOcr: boolean;
@@ -86,6 +88,8 @@ export default async function ocrGetElementPositionByText(
   data: OcrGetElementPositionByTextOptions
 ): Promise<OcrGetElementPositionByText> {
   const {
+    androidRectangles,
+    iOSRectangles,
     isTesseractAvailable,
     ocrImagesPath,
     reuseOcr,
@@ -93,6 +97,8 @@ export default async function ocrGetElementPositionByText(
     text,
   } = data
   const textPositions = await ocrGetTextPositions({
+    androidRectangles,
+    iOSRectangles,
     isTesseractAvailable,
     ocrImagesPath,
     reuseOcr,

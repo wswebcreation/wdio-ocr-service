@@ -21,7 +21,9 @@ declare global {
         options: ElementPositionByText = {}
       ): Promise<OcrGetElementPositionByText>;
 
-      ocrGetText(options?: GetTextOptions = {}): Promise<string>;
+      ocrGetText(
+        options?: GetTextOptions = {}
+      ): Promise<string>;
 
       ocrSetValue(
         selector: string,

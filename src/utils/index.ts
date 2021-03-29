@@ -31,6 +31,6 @@ export function determineClickPoint(options: DetermineClickPointOptions): ClickP
   const { rectangles: { left, right, top, bottom } } = options
   const x = left + (right - left) / 2
   const y = top + (bottom - top) / 2
-  console.log('{x, y} =', { x, y })
+
   return { x, y }
 }

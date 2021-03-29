@@ -39,9 +39,11 @@ export default class OcrService implements Services.ServiceInstance {
     driver.addCommand(
       'ocrGetElementPositionByText',
       (selector:string, options: ElementPositionByText={}) => {
-        const { reuseOcr } = options
+        const { androidRectangles, iOSRectangles, reuseOcr } = options
 
         return ocrElementPositionByText({
+          androidRectangles,
+          iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._options.ocrImagesPath,
@@ -54,9 +56,11 @@ export default class OcrService implements Services.ServiceInstance {
     driver.addCommand(
       'ocrClickOnText',
       (selector: string, options: ClickOnTextOptions = {}) => {
-        const { reuseOcr } = options
+        const { androidRectangles, iOSRectangles, reuseOcr } = options
 
         return ocrClickOnText({
+          androidRectangles,
+          iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._options.ocrImagesPath,
@@ -67,9 +71,11 @@ export default class OcrService implements Services.ServiceInstance {
     )
 
     driver.addCommand('ocrGetText', (options: GetTextOptions = {}) => {
-      const { reuseOcr } = options
+      const { androidRectangles, iOSRectangles, reuseOcr } = options
 
       return ocrGetText({
+        androidRectangles,
+        iOSRectangles,
         isTesseractAvailable: tesseractAvailable,
         reuseOcr: !!reuseOcr,
         ocrImagesPath: this._options.ocrImagesPath,
@@ -79,10 +85,13 @@ export default class OcrService implements Services.ServiceInstance {
 
     driver.addCommand(
       'ocrWaitForTextDisplayed',
-      (selector: string, options: WaitForTextDisplayedOptions = {}) => {
-        const { timeout, timeoutMsg } = options
+      (selector: string, options: WaitForTextDisplayedOptions = {}
+      ) => {
+        const { androidRectangles, iOSRectangles, timeout, timeoutMsg } = options
 
         return ocrWaitForTextDisplayed({
+          androidRectangles,
+          iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
           ocrImagesPath: this._options.ocrImagesPath,
           screenSize,
@@ -96,9 +105,11 @@ export default class OcrService implements Services.ServiceInstance {
     driver.addCommand(
       'ocrSetValue',
       (selector: string, value: string, options: SetValueOptions = {}) => {
-        const { reuseOcr } = options
+        const { androidRectangles, iOSRectangles, reuseOcr } = options
 
         return ocrSetValue({
+          androidRectangles,
+          iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
           ocrImagesPath: this._options.ocrImagesPath,
           reuseOcr: !!reuseOcr,

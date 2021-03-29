@@ -24,23 +24,33 @@ export interface OcrServiceConfig {
 }
 
 export interface WaitForTextDisplayedOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   timeout?: number;
   timeoutMsg?: string;
 }
 
 export interface SetValueOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   reuseOcr?: boolean;
 }
 
 export interface ClickOnTextOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   reuseOcr?: boolean;
 }
 
 export interface GetTextOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   reuseOcr?: boolean;
 }
 
 export interface ElementPositionByText {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   reuseOcr?: boolean;
 }
 

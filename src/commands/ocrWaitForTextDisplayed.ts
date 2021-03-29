@@ -1,7 +1,9 @@
-import { ScreenSize } from '../types/types'
+import { Rectangles, ScreenSize } from '../types/types'
 import ocrGetText from './ocrGetText'
 
 interface OcrWaitForTextDisplayedOptions {
+  androidRectangles?: Rectangles;
+  iOSRectangles?: Rectangles;
   isTesseractAvailable: boolean;
   ocrImagesPath: string;
   screenSize: ScreenSize;
@@ -17,10 +19,12 @@ export default async function ocrWaitForTextDisplayed(
 
   return driver.waitUntil(
     async () => {
-      const { isTesseractAvailable, ocrImagesPath, screenSize, text } = options
+      const { androidRectangles, iOSRectangles, isTesseractAvailable, ocrImagesPath, screenSize, text } = options
 
       return (
         await ocrGetText({
+          androidRectangles,
+          iOSRectangles,
           isTesseractAvailable,
           ocrImagesPath,
           // Always use a clean OCR

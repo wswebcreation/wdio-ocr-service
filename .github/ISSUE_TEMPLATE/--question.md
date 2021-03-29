@@ -1,5 +1,5 @@
 ---
-name: "\U0001F4ACQuestion"
+name: "\U0001F4AC Question"
 about: Ask questions.
 
 ---

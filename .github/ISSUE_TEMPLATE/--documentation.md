@@ -1,5 +1,5 @@
 ---
-name: "\U0001F4D6Documentation"
+name: "\U0001F4D6 Documentation"
 about: Suggest improvements or report missing/unclear documentation.
 
 ---

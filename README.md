@@ -1,4 +1,8 @@
 # OCR Services
+
+> **NOTE:** This module is still in development and is not officially released. You can only use it by installing OR the
+> exact version, see below, or by providing `@next` as a version. Any feedback is welcome!
+
 A WebdriverIO service that is using Tesseract OCR for Appium Native App tests.
 
 [![NPM](https://nodei.co/npm/wdio-ocr-service.png)](https://nodei.co/npm/wdio-ocr-service/)
@@ -59,7 +63,7 @@ The easiest way is to keep `wdio-ocr-service` as a devDependency in your `packag
 You can simply do it by:
 
 ```bash
-npm install wdio-ocr-service --save-dev
+npm install wdio-ocr-service@next --save-dev
 ```
 
 Instructions on how to install `WebdriverIO` can be found [here.](https://webdriver.io/docs/gettingstarted.html).
@@ -119,6 +123,7 @@ will become to brittle then the commands from this service can definitely help y
 I've never done it, but in theory it should be possible. Please let me know if you succeed with that ☺️.
 
 ## TODO:
+- [ ] Create Unit tests
 - [ ] provide language as an option, now English is the default
 - [ ] create contribution docs
 - [x] provide the option to OCR in *restricted* areas

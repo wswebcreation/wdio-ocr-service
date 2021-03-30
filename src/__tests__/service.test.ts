@@ -1,9 +1,8 @@
-import {toMatchSnapshot} from 'jest-snapshot'
-import fs from 'fs';
+import { toMatchSnapshot } from 'jest-snapshot'
+import fs from 'fs'
 import WdioOcrService from '../index'
 import * as Tesseract from '../utils/tesseract'
-import {OCR_IMAGES_PATH} from "../utils/constants";
-import {isTesseractAvailable} from "../utils/tesseract";
+import { OCR_IMAGES_PATH } from '../utils/constants'
 import OcrGetElementPositionByText from '../commands/ocrGetElementPositionByText'
 import OcrClickOnText from '../commands/ocrClickOnText'
 import OcrGetText from '../commands/ocrGetText'
@@ -13,16 +12,16 @@ import OcrSetValue from '../commands/ocrSetValue'
 expect.extend({
   toHaveBeenCalledWithSnapshot(received) {
     // @ts-ignore
-    return toMatchSnapshot.call(this, received);
+    return toMatchSnapshot.call(this, received)
   },
-});
+})
 
-jest.mock('fs');
-jest.mock('../commands/ocrGetElementPositionByText', () => jest.fn());
-jest.mock('../commands/ocrClickOnText', () => jest.fn());
-jest.mock('../commands/ocrGetText', () => jest.fn());
-jest.mock('../commands/ocrWaitForTextDisplayed', () => jest.fn());
-jest.mock('../commands/ocrSetValue', () => jest.fn());
+jest.mock('fs')
+jest.mock('../commands/ocrGetElementPositionByText', () => jest.fn())
+jest.mock('../commands/ocrClickOnText', () => jest.fn())
+jest.mock('../commands/ocrGetText', () => jest.fn())
+jest.mock('../commands/ocrWaitForTextDisplayed', () => jest.fn())
+jest.mock('../commands/ocrSetValue', () => jest.fn())
 
 const caps: WebDriver.Capabilities = {
   browserName: 'chrome',
@@ -38,7 +37,7 @@ class DriverMock {
       this[name] = fn
     })
 
-    this.getWindowSize = jest.fn().mockReturnValue({height: 400, width: 200})
+    this.getWindowSize = jest.fn().mockReturnValue({ height: 400, width: 200 })
     this.isIOS = isIOS
     this.updateSettings = jest.fn()
   }
@@ -61,19 +60,19 @@ describe('wdio-ocr-service', () => {
 
   describe('init', () => {
     it('should create the default ocr-folder', () => {
-      fs.mkdirSync = jest.fn();
+      fs.mkdirSync = jest.fn()
       new WdioOcrService()
 
-      expect(fs.mkdirSync).toHaveBeenCalledWith(OCR_IMAGES_PATH, {'recursive': true})
+      expect(fs.mkdirSync).toHaveBeenCalledWith(OCR_IMAGES_PATH, { 'recursive': true })
 
     })
 
     it('should create a provided ocr-folder', () => {
-      fs.mkdirSync = jest.fn();
+      fs.mkdirSync = jest.fn()
       const path = './foo'
-      new WdioOcrService({ocrImagesPath: path})
+      new WdioOcrService({ ocrImagesPath: path })
 
-      expect(fs.mkdirSync).toHaveBeenCalledWith(path, {'recursive': true})
+      expect(fs.mkdirSync).toHaveBeenCalledWith(path, { 'recursive': true })
 
     })
   })
@@ -111,8 +110,8 @@ describe('wdio-ocr-service', () => {
       await service['_driver']?.ocrGetElementPositionByText(
         'foo',
         {
-          androidRectangles: {foo: 'androidRectangles'},
-          iOSRectangles: {foo: 'iOSRectangles'},
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
           reuseOcr: true
         }
       )
@@ -138,8 +137,8 @@ describe('wdio-ocr-service', () => {
       await service['_driver']?.ocrClickOnText(
         'click',
         {
-          androidRectangles: {foo: 'androidRectangles'},
-          iOSRectangles: {foo: 'iOSRectangles'},
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
           reuseOcr: true
         }
       )
@@ -164,8 +163,8 @@ describe('wdio-ocr-service', () => {
       // @ts-ignore
       await service['_driver']?.ocrGetText(
         {
-          androidRectangles: {foo: 'androidRectangles'},
-          iOSRectangles: {foo: 'iOSRectangles'},
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
           reuseOcr: true
         }
       )
@@ -191,8 +190,8 @@ describe('wdio-ocr-service', () => {
       await service['_driver']?.ocrWaitForTextDisplayed(
         'ocrWaitForTextDisplayed',
         {
-          androidRectangles: {foo: 'androidRectangles'},
-          iOSRectangles: {foo: 'iOSRectangles'},
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
           reuseOcr: true,
           timeout: 15,
           timeoutMsg: 'timeoutMsg',
@@ -221,8 +220,8 @@ describe('wdio-ocr-service', () => {
         'ocrSetValue-selector',
         'ocrSetValue',
         {
-          androidRectangles: {foo: 'androidRectangles'},
-          iOSRectangles: {foo: 'iOSRectangles'},
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
           reuseOcr: true
         }
       )

@@ -15,7 +15,7 @@ import {
 } from './typings/types'
 import ocrWaitForTextDisplayed from './commands/ocrWaitForTextDisplayed'
 import { isTesseractAvailable } from './utils/tesseract'
-import {OCR_IMAGES_PATH} from "./utils/constants";
+import { OCR_IMAGES_PATH } from './utils/constants'
 
 export default class OcrService implements Services.ServiceInstance {
   private _ocrImagesPath = OCR_IMAGES_PATH

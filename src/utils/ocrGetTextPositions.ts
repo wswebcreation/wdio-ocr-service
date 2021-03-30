@@ -30,7 +30,6 @@ export default async function ocrGetTextPositions(options: OcrGetTextPositionsOp
         originalPosition: bbox,
         dprPosition: getDprPositions(JSON.parse(JSON.stringify(bbox)), dpr),
       }))
-      // Fix this one
       .filter((element) => element.text)
   )
 }

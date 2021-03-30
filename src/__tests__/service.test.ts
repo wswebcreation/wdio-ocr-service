@@ -1,4 +1,3 @@
-import { toMatchSnapshot } from 'jest-snapshot'
 import fs from 'fs'
 import WdioOcrService from '../index'
 import * as Tesseract from '../utils/tesseract'
@@ -8,13 +7,6 @@ import OcrClickOnText from '../commands/ocrClickOnText'
 import OcrGetText from '../commands/ocrGetText'
 import OcrWaitForTextDisplayed from '../commands/ocrWaitForTextDisplayed'
 import OcrSetValue from '../commands/ocrSetValue'
-
-expect.extend({
-  toHaveBeenCalledWithSnapshot(received) {
-    // @ts-ignore
-    return toMatchSnapshot.call(this, received)
-  },
-})
 
 jest.mock('fs')
 jest.mock('../commands/ocrGetElementPositionByText', () => jest.fn())

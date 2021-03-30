@@ -24,4 +24,5 @@ module.exports = {
   },
   testEnvironment: "node",
   coveragePathIgnorePatterns: ["node_modules/"],
+  setupFilesAfterEnv: ['<rootDir>/src/__tests__/setupJest.ts']
 };

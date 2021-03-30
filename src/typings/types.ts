@@ -20,7 +20,7 @@ export interface DetermineClickPointOptions {
 }
 
 export interface OcrServiceConfig {
-  ocrImagesPath: string;
+  ocrImagesPath?: string;
 }
 
 export interface WaitForTextDisplayedOptions {

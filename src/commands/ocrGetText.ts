@@ -1,5 +1,5 @@
 import ocrGetData from '../utils/ocrGetData'
-import { Rectangles, ScreenSize } from '../types/types'
+import { Rectangles, ScreenSize } from '../typings/types'
 
 interface OcrGetTextOptions {
   androidRectangles?:Rectangles;

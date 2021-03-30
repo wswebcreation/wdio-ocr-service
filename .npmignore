@@ -1,5 +1,7 @@
 **/*.traineddata
+**/coverage
 **/node_modules
 **/.tmp
 **/*lock
 **/jest.config.js
+**/__tests__

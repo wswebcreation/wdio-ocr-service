@@ -1,7 +1,7 @@
 // @ts-ignore
 import { encodePNGToStream, decodePNGFromStream, make } from 'pureimage'
 import { createReadStream, createWriteStream } from 'fs'
-import { Rectangles } from '../types/types'
+import { Rectangles } from '../typings/types'
 
 interface CreateImageData {
   bottom?: number;

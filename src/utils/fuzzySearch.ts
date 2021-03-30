@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js'
-import { Rectangles } from '../types/types'
+import { Rectangles } from '../typings/types'
 
 interface FuzzyFindOptions {
   textArray: {

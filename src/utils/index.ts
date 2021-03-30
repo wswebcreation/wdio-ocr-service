@@ -3,7 +3,7 @@ import {
   DetermineClickPointOptions,
   Rectangles,
   ScreenSize,
-} from '../types/types'
+} from '../typings/types'
 
 /**
  * Get the size of a screenshot in pixels

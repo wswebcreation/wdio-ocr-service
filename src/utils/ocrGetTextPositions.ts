@@ -1,6 +1,6 @@
 import ocrGetData from './ocrGetData'
 import { getDprPositions } from './index'
-import { Line, Rectangles } from '../types/types'
+import { Line, Rectangles } from '../typings/types'
 
 interface OcrGetTextPositionsOptions {
   androidRectangles?:Rectangles;

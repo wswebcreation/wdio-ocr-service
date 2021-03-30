@@ -1,6 +1,6 @@
 import ocrGetElementPositionByText from './ocrGetElementPositionByText'
 import { determineClickPoint } from '../utils'
-import { Rectangles, ScreenSize } from '../types/types'
+import { Rectangles, ScreenSize } from '../typings/types'
 
 interface OcrClickOnTextOptions {
   androidRectangles?:Rectangles;

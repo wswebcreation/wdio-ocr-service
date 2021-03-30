@@ -3,7 +3,7 @@ import { createWorker, OEM, PSM } from 'tesseract.js'
 // @ts-ignore
 import { recognize } from 'node-tesseract-ocr'
 import { parseString } from 'xml2js'
-import { GetOcrData, Line, Rectangles, Words } from '../types/types'
+import { GetOcrData, Line, Rectangles, Words } from '../typings/types'
 
 export async function isTesseractAvailable(
   tesseractName: string = ''

@@ -6,7 +6,7 @@ import {
   OcrServiceConfig,
   SetValueOptions,
   WaitForTextDisplayedOptions,
-} from "../src/types/types";
+} from "../src/typings/types";
 
 declare global {
   namespace WebdriverIO {

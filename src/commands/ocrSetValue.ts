@@ -1,4 +1,4 @@
-import { Rectangles, ScreenSize } from '../types/types'
+import { Rectangles, ScreenSize } from '../typings/types'
 import ocrKeys from '../utils/ocrKeys'
 import ocrClickOnText from './ocrClickOnText'
 

@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with all options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with no options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositionByText with all options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositionByText with no options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrGetText with all options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrGetText with no options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrSetValue with all options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrSetValue with no options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDisplayed with all options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": 15,
+        "timeoutMsg": "timeoutMsg",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDisplayed with no options 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

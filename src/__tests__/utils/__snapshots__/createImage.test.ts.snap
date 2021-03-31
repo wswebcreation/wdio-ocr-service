@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createImage should be able to crop an image when it is being drawn 1`] = `
+Array [
+  Object {
+    "drawImageArgs": Array [
+      "pureImageDecodePNGFromStream",
+      70,
+      300,
+      680,
+      445,
+      70,
+      300,
+      680,
+      445,
+    ],
+  },
+]
+`;
+
+exports[`createImage should be able to crop an image when it is being drawn where top is 0 1`] = `
+Array [
+  Object {
+    "drawImageArgs": Array [
+      "pureImageDecodePNGFromStream",
+      0,
+      0,
+      25,
+      1700,
+      0,
+      0,
+      25,
+      1700,
+    ],
+  },
+]
+`;
+
+exports[`createImage should be able to draw the lines 1`] = `
+Array [
+  Object {
+    "drawImageArgs": Array [
+      "pureImageDecodePNGFromStream",
+      0,
+      0,
+      828,
+      1792,
+      0,
+      0,
+      828,
+      1792,
+    ],
+  },
+  Object {
+    "fillRectangleArgs": Array [
+      83,
+      326,
+      165,
+      26,
+    ],
+  },
+  Object {
+    "rectangleArgs": Array [
+      83,
+      326,
+      165,
+      26,
+    ],
+  },
+  Object {
+    "fillRectangleArgs": Array [
+      83,
+      454,
+      154,
+      26,
+    ],
+  },
+  Object {
+    "rectangleArgs": Array [
+      83,
+      454,
+      154,
+      26,
+    ],
+  },
+  Object {
+    "fillRectangleArgs": Array [
+      359,
+      669,
+      108,
+      26,
+    ],
+  },
+  Object {
+    "rectangleArgs": Array [
+      359,
+      669,
+      108,
+      26,
+    ],
+  },
+]
+`;
+
+exports[`createImage should call all internal methods with default options 1`] = `
+Array [
+  Object {
+    "drawImageArgs": Array [
+      "pureImageDecodePNGFromStream",
+      0,
+      0,
+      828,
+      1792,
+      0,
+      0,
+      828,
+      1792,
+    ],
+  },
+]
+`;

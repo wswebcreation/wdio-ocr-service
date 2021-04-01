@@ -15,7 +15,7 @@ interface ContextFunctionArguments {
 const pureImageDecodePNGFromStream = PureImage.decodePNGFromStream
 const pureImageEncodePNGToStream = PureImage.encodePNGToStream
 const pureImageMake = PureImage.make
-let contextFunctionArguments: ContextFunctionArguments[] = [];
+let contextFunctionArguments: ContextFunctionArguments[] = []
 
 describe('createImage', () => {
   beforeEach(() => {
@@ -27,13 +27,13 @@ describe('createImage', () => {
       getContext: jest.fn().mockImplementation(() => ({
         beginPath: jest.fn().mockImplementation(() => jest.fn()),
         drawImage: jest.fn().mockImplementation(
-          (...drawImageArgs) => contextFunctionArguments.push({drawImageArgs})
+          (...drawImageArgs) => contextFunctionArguments.push({ drawImageArgs })
         ),
         fillRect: jest.fn().mockImplementation(
-          (...fillRectangleArgs) => contextFunctionArguments.push({fillRectangleArgs})
+          (...fillRectangleArgs) => contextFunctionArguments.push({ fillRectangleArgs })
         ),
         rect: jest.fn().mockImplementation(
-          (...rectangleArgs) => contextFunctionArguments.push({rectangleArgs})
+          (...rectangleArgs) => contextFunctionArguments.push({ rectangleArgs })
         ),
         stroke: jest.fn().mockImplementation(() => jest.fn()),
       })),
@@ -41,7 +41,7 @@ describe('createImage', () => {
   })
 
   afterEach(() => {
-    contextFunctionArguments = [];
+    contextFunctionArguments = []
   })
 
   it('should call all internal methods with default options', async () => {
@@ -53,13 +53,13 @@ describe('createImage', () => {
       width,
     }
 
-    await createImage(options);
+    await createImage(options)
 
     expect(fs.createReadStream).toHaveBeenCalledTimes(1)
     expect(pureImageDecodePNGFromStream).toHaveBeenCalledTimes(1)
     expect(pureImageMake).toHaveBeenCalledTimes(1)
     expect(pureImageMake).toHaveBeenCalledWith(width, height)
-    expect(contextFunctionArguments).toMatchSnapshot();
+    expect(contextFunctionArguments).toMatchSnapshot()
     expect(fs.createWriteStream).toHaveBeenCalledTimes(1)
   })
 
@@ -76,9 +76,9 @@ describe('createImage', () => {
       bottom: 745
     }
 
-    await createImage(options);
+    await createImage(options)
 
-    expect(contextFunctionArguments).toMatchSnapshot();
+    expect(contextFunctionArguments).toMatchSnapshot()
   })
 
   it('should be able to crop an image when it is being drawn where top is 0', async () => {
@@ -94,16 +94,16 @@ describe('createImage', () => {
       bottom: 1700
     }
 
-    await createImage(options);
+    await createImage(options)
 
-    expect(contextFunctionArguments).toMatchSnapshot();
+    expect(contextFunctionArguments).toMatchSnapshot()
   })
 
   it('should be able to draw the lines', async () => {
     const height = 1792
     const width = 828
     const options = {
-      filePath: "ocr-images/ios-1617180757754.png",
+      filePath: 'ocr-images/ios-1617180757754.png',
       height,
       lines: [
         {
@@ -137,8 +137,8 @@ describe('createImage', () => {
       width,
     }
 
-    await createImage(options);
+    await createImage(options)
 
-    expect(contextFunctionArguments).toMatchSnapshot();
+    expect(contextFunctionArguments).toMatchSnapshot()
   })
 })

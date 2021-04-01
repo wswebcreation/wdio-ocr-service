@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js'
-import {fuzzyFind} from '../../utils/fuzzySearch'
+import { fuzzyFind } from '../../utils/fuzzySearch'
 
 jest.mock('fuse.js')
 
@@ -10,8 +10,8 @@ describe('utils - fuzzySearch', () => {
         {
           item: {
             text: 'Username',
-            originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-            dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+            originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+            dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
           },
           refIndex: 0,
           score: 2.220446049250313e-16
@@ -23,8 +23,8 @@ describe('utils - fuzzySearch', () => {
       textArray: [
         {
           text: 'Username',
-          originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-          dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+          originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+          dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
         },
       ],
       pattern: 'Username',
@@ -40,8 +40,8 @@ describe('utils - fuzzySearch', () => {
         {
           item: {
             text: 'Username',
-            originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-            dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+            originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+            dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
           },
           refIndex: 0,
           score: 2.220446049250313e-16
@@ -49,8 +49,8 @@ describe('utils - fuzzySearch', () => {
         {
           item: {
             text: 'The currently accepted usernames for',
-            originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-            dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+            originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+            dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
           },
           refIndex: 5,
           score: 0.5184326474378735
@@ -62,18 +62,18 @@ describe('utils - fuzzySearch', () => {
       textArray: [
         {
           text: 'Username',
-          originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-          dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+          originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+          dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
         },
         {
           text: 'Password',
-          originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-          dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+          originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+          dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
         },
         {
           text: 'LOGIN',
-          originalPosition: {left: 1, top: 2, right: 3, bottom: 4},
-          dprPosition: {left: 1, top: 2, right: 3, bottom: 4},
+          originalPosition: { left: 1, top: 2, right: 3, bottom: 4 },
+          dprPosition: { left: 1, top: 2, right: 3, bottom: 4 },
         },
       ],
       pattern: 'Username',

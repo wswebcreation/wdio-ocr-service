@@ -71,6 +71,7 @@ export function fuzzyFind(options: FuzzyFindOptions) {
   const fuse = new Fuse(textArray, fuzzyOptions)
 
   return fuse.search(pattern).map((item) => {
+    /* istanbul ignore next */
     if (item.score) {
       item.score = item.score < 1e-10 ? 0 : item.score
       return item

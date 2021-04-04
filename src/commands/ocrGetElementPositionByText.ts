@@ -1,7 +1,7 @@
 import logger from '@wdio/logger'
 import ocrGetTextPositions from '../utils/ocrGetTextPositions'
 import { fuzzyFind } from '../utils/fuzzySearch'
-import { Rectangles } from '../typings/types'
+import { Rectangles, ScreenSize } from '../typings/types'
 import { SERVICE_NAME } from '../utils/constants'
 
 const log = logger(SERVICE_NAME)
@@ -12,10 +12,7 @@ interface OcrGetElementPositionByTextOptions {
   isTesseractAvailable: boolean;
   ocrImagesPath: string;
   reuseOcr: boolean;
-  screenSize: {
-    width: number;
-    height: number;
-  };
+  screenSize: ScreenSize;
   text: string;
 }
 

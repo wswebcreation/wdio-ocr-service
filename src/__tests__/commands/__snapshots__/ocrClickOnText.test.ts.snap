@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ocrClickOnText should be able to click on text with the correct arguments 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Array [
+        Object {
+          "actions": Array [
+            Object {
+              "duration": 0,
+              "type": "pointerMove",
+              "x": 3.5,
+              "y": 1.5,
+            },
+            Object {
+              "button": 0,
+              "type": "pointerDown",
+            },
+            Object {
+              "duration": 500,
+              "type": "pause",
+            },
+            Object {
+              "button": 0,
+              "type": "pointerUp",
+            },
+          ],
+          "id": "finger1",
+          "parameters": Object {
+            "pointerType": "touch",
+          },
+          "type": "pointer",
+        },
+      ],
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

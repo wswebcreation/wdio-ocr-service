@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils - index  - parseAttributeString should be able to parse data when bbox attributes are provided 1`] = `
+Object {
+  "bbox": Object {
+    "bottom": 352,
+    "left": 83,
+    "right": 248,
+    "top": 326,
+  },
+  "wc": 0,
+}
+`;
+
+exports[`utils - index  - parseAttributeString should be able to parse data when both bbox and x_wconf attributes are provided 1`] = `
+Object {
+  "bbox": Object {
+    "bottom": 695,
+    "left": 359,
+    "right": 467,
+    "top": 669,
+  },
+  "wc": 0.9,
+}
+`;
+
+exports[`utils - index  - parseAttributeString should be able to parse data when no matching attributes are provided 1`] = `
+Object {
+  "bbox": Object {
+    "bottom": 0,
+    "left": 0,
+    "right": 0,
+    "top": 0,
+  },
+  "wc": 0,
+}
+`;
+
+exports[`utils - index  - parseAttributeString should be able to parse data when x_wconf attributes are provided 1`] = `
+Object {
+  "bbox": Object {
+    "bottom": 0,
+    "left": 0,
+    "right": 0,
+    "top": 0,
+  },
+  "wc": 0.91,
+}
+`;

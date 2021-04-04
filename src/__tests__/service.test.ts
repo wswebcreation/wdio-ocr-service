@@ -43,7 +43,7 @@ describe('wdio-ocr-service', () => {
   let isTesseractAvailableSpy: jest.SpyInstance
 
   beforeEach(() => {
-    isTesseractAvailableSpy = jest.spyOn(Tesseract, 'isTesseractAvailable').mockResolvedValue(false)
+    isTesseractAvailableSpy = jest.spyOn(Tesseract, 'isTesseractAvailable').mockReturnValue(false)
   })
 
   afterEach(() => {

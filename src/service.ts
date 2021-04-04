@@ -40,7 +40,7 @@ export default class OcrService implements Services.ServiceInstance {
     }
 
     const screenSize = await this._driver.getWindowSize() as ScreenSize
-    const tesseractAvailable = await isTesseractAvailable()
+    const tesseractAvailable = isTesseractAvailable()
 
     this._driver.addCommand(
       'ocrGetElementPositionByText',

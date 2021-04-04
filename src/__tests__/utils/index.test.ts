@@ -1,4 +1,4 @@
-import { determineClickPoint, getDprPositions, getScreenshotSize } from '../../utils'
+import { determineClickPoint, getDprPositions, getScreenshotSize, parseAttributeString } from '../../utils'
 
 describe('utils - index', () => {
   it('should be able to get the screenshot size with getScreenshotSize', () => {
@@ -54,5 +54,23 @@ describe('utils - index', () => {
           y: 350,
         }
       )
+  })
+
+  describe(' - parseAttributeString', () => {
+    it('should be able to parse data when no matching attributes are provided', () => {
+      expect(parseAttributeString([''])).toMatchSnapshot()
+    })
+
+    it('should be able to parse data when bbox attributes are provided', () => {
+      expect(parseAttributeString(['bbox 83 326 248 352'])).toMatchSnapshot()
+    })
+
+    it('should be able to parse data when x_wconf attributes are provided', () => {
+      expect(parseAttributeString(['x_wconf 91'])).toMatchSnapshot()
+    })
+
+    it('should be able to parse data when both bbox and x_wconf attributes are provided', () => {
+      expect(parseAttributeString(['', 'bbox 359 669 467 695', 'x_wconf 90'])).toMatchSnapshot()
+    })
   })
 })

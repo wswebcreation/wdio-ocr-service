@@ -51,7 +51,7 @@ Object {
 exports[`ocrGetElementPositionByText should select the only match 2`] = `
 Array [
   Array [
-    "We found one match with score \\"60%\\"",
+    "We searched for the word \\"text\\" and found one match \\"text 60\\" with score \\"60%\\"",
   ],
 ]
 `;

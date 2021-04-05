@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ocrWaitForTextDisplayed should be able to wait for a text to be displayed 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": true,
+        "ocrImagesPath": "ocrImagesPath",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 2,
+          "width": 1,
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;

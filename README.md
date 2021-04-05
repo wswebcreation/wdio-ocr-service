@@ -1,9 +1,10 @@
 # OCR Services
-
-> **NOTE:** This module is still in development and is not officially released. You can only use it by installing OR the
-> exact version, see below, or by providing `@next` as a version. Any feedback is welcome!
-
 A WebdriverIO service that is using Tesseract OCR for Appium Native App tests.
+
+[![Gitter chat](https://badges.gitter.im/wswebcreation/wdio-ocr-service.png)](https://gitter.im/wswebcreation/wdio-ocr-service "Gitter chat")
+[![dependencies Status](https://david-dm.org/wswebcreation/wdio-ocr-service/status.svg)](https://david-dm.org/wswebcreation/wdio-ocr-service)
+![wdio-ocr-service workflow](https://github.com/wswebcreation/wdio-ocr-service/actions/workflows/wdio-ocr-service.yml/badge.svg)
+[![codecov](https://codecov.io/gh/wswebcreation/wdio-image-comparison-service/branch/master/graph/badge.svg?token=6zGW0ccdqR)](https://codecov.io/gh/wswebcreation/wdio-image-comparison-service)
 
 [![NPM](https://nodei.co/npm/wdio-ocr-service.png)](https://nodei.co/npm/wdio-ocr-service/)
 
@@ -123,7 +124,7 @@ will become to brittle then the commands from this service can definitely help y
 I've never done it, but in theory it should be possible. Please let me know if you succeed with that ☺️.
 
 ## TODO:
-- [ ] Create Unit tests
+- [x] Create Unit tests
 - [ ] provide language as an option, now English is the default
 - [ ] create contribution docs
 - [x] provide the option to OCR in *restricted* areas

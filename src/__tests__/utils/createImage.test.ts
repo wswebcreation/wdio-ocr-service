@@ -1,5 +1,5 @@
 // @ts-ignore
-import PureImage from 'pureimage'
+import * as PureImage from 'pureimage'
 import fs from 'fs'
 import createImage from '../../utils/createImage'
 

@@ -121,12 +121,14 @@ export default async function ocrGetElementPositionByText(
     score = Number(((1-element.score)*100).toFixed(2))
     const messageOne = `Multiple matches were found based on the word "${text}".`
     // @ts-ignore
-    const messageTwo = `The match "${matches[0].item.text}" with score "${score}%" will be used.`
+    const messageTwo = `The match "${element.item.text}" with score "${score}%" will be used.`
     log.info(`${messageOne} ${messageTwo}`)
   } else {
     element = matches[0] as FuzzyElement
     score = Number(((1-element.score)*100).toFixed(2))
-    log.info(`We found one match with score "${score}%"`)
+    log.info(
+      `We searched for the word "${text}" and found one match "${element.item.text}" with score "${score}%"`
+    )
   }
 
   return {

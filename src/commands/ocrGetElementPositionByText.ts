@@ -106,6 +106,7 @@ export default async function ocrGetElementPositionByText(
     pattern: text,
   })
   let element
+  let score
 
   if (matches.length === 0) {
     log.warn(`No matches were found based on the word "${text}"`)
@@ -116,14 +117,16 @@ export default async function ocrGetElementPositionByText(
   } else if (matches.length > 1) {
     // @ts-ignore
     matches.sort((a, b) => (a.score > b.score ? 1 : -1))
+    element = matches[0] as FuzzyElement
+    score = Number(((1-element.score)*100).toFixed(2))
     const messageOne = `Multiple matches were found based on the word "${text}".`
     // @ts-ignore
-    const messageTwo = `The match "${matches[0].item.text}" with score "${(1 - matches[0].score) * 100}%" will be used.`
-    log.warn(`${messageOne} ${messageTwo}`)
-    element = matches[0] as FuzzyElement
+    const messageTwo = `The match "${matches[0].item.text}" with score "${score}%" will be used.`
+    log.info(`${messageOne} ${messageTwo}`)
   } else {
-    log.info('We found one match')
     element = matches[0] as FuzzyElement
+    score = Number(((1-element.score)*100).toFixed(2))
+    log.info(`We found one match with score "${score}%"`)
   }
 
   return {
@@ -131,6 +134,6 @@ export default async function ocrGetElementPositionByText(
     matchedString: element.item.text,
     originalPosition: element.item.originalPosition,
     dprPosition: element.item.dprPosition,
-    score: Number(((1-element.score)*100).toFixed(2))
+    score,
   }
 }

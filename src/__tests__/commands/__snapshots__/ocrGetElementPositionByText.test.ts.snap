@@ -20,6 +20,42 @@ Object {
 }
 `;
 
+exports[`ocrGetElementPositionByText should select the match with the highest score 2`] = `
+Array [
+  Array [
+    "Multiple matches were found based on the word \\"text\\". The match \\"text 100\\" with score \\"100%\\" will be used.",
+  ],
+]
+`;
+
+exports[`ocrGetElementPositionByText should select the only match 1`] = `
+Object {
+  "dprPosition": Object {
+    "bottom": 2,
+    "left": 3,
+    "right": 4,
+    "top": 1,
+  },
+  "matchedString": "text 60",
+  "originalPosition": Object {
+    "bottom": 2,
+    "left": 3,
+    "right": 4,
+    "top": 1,
+  },
+  "score": 60,
+  "searchValue": "text",
+}
+`;
+
+exports[`ocrGetElementPositionByText should select the only match 2`] = `
+Array [
+  Array [
+    "We found one match with score \\"60%\\"",
+  ],
+]
+`;
+
 exports[`ocrGetElementPositionByText should select the sorted match with the highest score 1`] = `
 Object {
   "dprPosition": Object {
@@ -40,22 +76,10 @@ Object {
 }
 `;
 
-exports[`ocrGetElementPositionByText should select the the only match 1`] = `
-Object {
-  "dprPosition": Object {
-    "bottom": 2,
-    "left": 3,
-    "right": 4,
-    "top": 1,
-  },
-  "matchedString": "text 60",
-  "originalPosition": Object {
-    "bottom": 2,
-    "left": 3,
-    "right": 4,
-    "top": 1,
-  },
-  "score": 60,
-  "searchValue": "text",
-}
+exports[`ocrGetElementPositionByText should throw an error when no matches are found 1`] = `
+Array [
+  Array [
+    "No matches were found based on the word \\"text\\"",
+  ],
+]
 `;

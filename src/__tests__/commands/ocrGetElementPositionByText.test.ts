@@ -2,6 +2,12 @@ import ocrGetElementPositionByText from '../../commands/ocrGetElementPositionByT
 import * as OcrGetTextPositions from '../../utils/ocrGetTextPositions'
 import * as FuzzySearch from '../../utils/fuzzySearch'
 
+let logger: string[] = []
+jest.mock('@wdio/logger', ()=>jest.fn().mockImplementation(()=>({
+  info: jest.fn().mockImplementation((...infoArgs)=> logger.push(infoArgs)),
+  warn: jest.fn().mockImplementation((...warnArgs)=> logger.push(warnArgs)),
+})))
+
 describe('ocrGetElementPositionByText', () => {
   let ocrGetTextPositionsSpy: jest.SpyInstance
   let fuzzySearchSpy: jest.SpyInstance
@@ -19,6 +25,7 @@ describe('ocrGetElementPositionByText', () => {
   afterEach(() => {
     ocrGetTextPositionsSpy.mockClear()
     fuzzySearchSpy.mockClear()
+    logger = []
   })
 
   it('should throw an error when no matches are found', async () => {
@@ -40,6 +47,7 @@ describe('ocrGetElementPositionByText', () => {
       expect(fuzzySearchSpy).toHaveBeenCalledTimes(1)
       expect(error.toString())
         .toEqual('Error: InvalidSelectorMatch. Strategy \'ocr\' has failed to find word \'text\' in the image')
+      expect(logger).toMatchSnapshot()
     }
   })
 
@@ -73,6 +81,7 @@ describe('ocrGetElementPositionByText', () => {
     ])
 
     expect(await ocrGetElementPositionByText(options)).toMatchSnapshot()
+    expect(logger).toMatchSnapshot()
   })
 
   it('should select the sorted match with the highest score', async () => {
@@ -107,7 +116,7 @@ describe('ocrGetElementPositionByText', () => {
     expect(await ocrGetElementPositionByText(options)).toMatchSnapshot()
   })
 
-  it('should select the the only match', async () => {
+  it('should select the only match', async () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
@@ -128,5 +137,6 @@ describe('ocrGetElementPositionByText', () => {
     ])
 
     expect(await ocrGetElementPositionByText(options)).toMatchSnapshot()
+    expect(logger).toMatchSnapshot()
   })
 })

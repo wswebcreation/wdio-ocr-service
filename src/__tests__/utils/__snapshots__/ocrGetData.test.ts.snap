@@ -210,6 +210,27 @@ exports[`utils - ocrGetData should return Node ocrData with default options 2`] 
 }
 `;
 
+exports[`utils - ocrGetData should return Node ocrData with default options 3`] = `
+Array [
+  Array [
+    "Using NodeJS version of Tesseract",
+  ],
+  Array [
+    "It took '0.000s' to process the image.",
+  ],
+  Array [
+    "The following text was found through OCR:
+
+ocrData",
+  ],
+  Array [
+    "OCR Image with found text can be found here:
+
+ocrImagesPath/android-1466424490000.png",
+  ],
+]
+`;
+
 exports[`utils - ocrGetData should return System ocrData with default options 1`] = `
 Object {
   "dpr": 2,
@@ -237,4 +258,25 @@ Object {
     },
   ],
 }
+`;
+
+exports[`utils - ocrGetData should return System ocrData with default options 2`] = `
+Array [
+  Array [
+    "Using system installed version of Tesseract",
+  ],
+  Array [
+    "It took '0.000s' to process the image.",
+  ],
+  Array [
+    "The following text was found through OCR:
+
+ocrData",
+  ],
+  Array [
+    "OCR Image with found text can be found here:
+
+ocrImagesPath/android-1466424490000.png",
+  ],
+]
 `;

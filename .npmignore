@@ -4,4 +4,7 @@
 **/.tmp
 **/*lock
 **/jest.config.js
-**/__tests__
+.github/
+.idea/
+.husky
+docs

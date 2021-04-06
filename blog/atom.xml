@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wswebcreation.github.io/blog</id>
+    <title>wdio-ocr-service Blog</title>
+    <updated>2015-10-25T23:29:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wswebcreation.github.io/blog"/>
+    <subtitle>wdio-ocr-service Blog</subtitle>
+    <icon>https://wswebcreation.github.io/img/favicon.ico</icon>
+</feed>

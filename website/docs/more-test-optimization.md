@@ -1,17 +1,13 @@
-# Test Execution Optimization
+---
+title: Test execution time
+---
 
-- [Optimize by re-using already processed images](#optimize-by-re-using-already-processed-images)
-- [Optimize by cropping the search area of a screen](#optimize-by-cropping-the-search-area-of-a-screen)
-- [Optimize by using a local installation of Tesseract](#optimize-by-using-a-local-installation-of-tesseract)
-
-When you are using this service **without** a local installation of Tesseract you might experience some slowness. This
-has to do with the fact that the image processing will be done by Node.js. This is not the best system to do heavy
-processing.
+By default this module will check if you have a local installation of Tesseract on your machine/in your pipeline. If you
+don't have a local installation it will automatically use a [NodeJS](https://github.com/naptha/tesseract.js) version.
+This might cause some slowness because the image processing will be done by Node.js. NodeJS is not the best system to do
+heavy processing.
 
 **BUT....**, there are ways to optimize the execution time. Let's take the following test script
-
-<details>
-<summary>Click to expand and see the test script.</summary>
 
 ```js
 describe('My first OCR test', () => {
@@ -32,13 +28,9 @@ describe('My first OCR test', () => {
     })
 })
 ```
-</details>
 
 When you execute this for the first time on a local Android emulator and a local iOS simulator you might see the
 following results.
-
-<details>
-<summary>Click to expand and see the logs.</summary>
 
 ```log
 [emulator-5554 Android 10 #0-0] Spec: /tests/e2e/specs/ocr.spec.ts
@@ -59,15 +51,18 @@ following results.
 [iPhone 11 iOS 14.2 #1-0]
 [iPhone 11 iOS 14.2 #1-0] 1 passing (2m 34.7s)
 ```
-</details>
 
-## Optimize by re-using already processed images
+## Re-using already processed images
 You can optimize the execution time by re-using the already processed images by providing the option `{reuseOcr: true}`
-for certain commands (see [here](./COMMANDS.md) which commands support this option). If you would then change the
-script to this:
+for the following commands:
 
-<details>
-<summary>Click to expand and see the optimized test script.</summary>
+- [`ocrClickOnText`](./ocr-click-on-text)
+- [`ocrGetElementPositionByText`](./ocr-get-element-position-by-text)
+- [`ocrGetText`](./ocr-get-text)
+- [`ocrSetValue`](./ocr-set-value)
+- [`ocrSetValue`](./ocr-set-value)
+
+If you would then change the script to this:
 
 ```js
 describe('My OCR first test', () => {
@@ -88,12 +83,8 @@ describe('My OCR first test', () => {
     })
 })
 ```
-</details>
 
 Then you will see a different execution time.
-
-<details>
-<summary>Click to expand and see the local execution logs with re-using processed images enabled.</summary>
 
 ```log
 [iPhone 11 iOS 14.2 #1-0] Spec: /tests/e2e/specs/ocr.spec.ts
@@ -114,24 +105,54 @@ Then you will see a different execution time.
 [emulator-5554 Android 10 #0-0]
 [emulator-5554 Android 10 #0-0] 1 passing (1m 11.3s)
 ```
-</details>
 
-This almost reduced the local execution time from **2 minutes** to **1 minute**.
+:::tip Re-use images
+This reduced the local execution time from **2 minutes** to **1 minute**.
+:::
 
-## Optimize by cropping the search area of a screen
+## Cropping the search area of a screen
 You can optimize the execution time by:
 
-- **AND** re-using the already processed images by providing the option `{reuseOcr: true}` for certain commands
-  (see [here](./COMMANDS.md) which commands support this option)
+- **AND** re-using the already processed images by providing the option `{reuseOcr: true}`, see
+  [Re-using already processed images](#re-using-already-processed-images).
 - **AND** by providing a cropped area for Android and or iOS to execute the OCR on.
 
-> **NOTE:** Be aware of the fact that each device has its own screen resolution. You need to understand that this could
-> lead to different text in that cropped area because a smaller screen will hold less information than a bigger screen.
+:::info
+Be aware of the fact that each device has its own screen resolution. You need to understand that this could lead to
+different text in that cropped area because a smaller screen will hold less information than a bigger screen.
+:::
+
+You can provide **AND** Android **AND** iOS rectangles through the options for the following commands:
+
+- [`ocrClickOnText`](./ocr-click-on-text)
+- [`ocrGetElementPositionByText`](./ocr-get-element-position-by-text)
+- [`ocrGetText`](./ocr-get-text)
+- [`ocrSetValue`](./ocr-set-value)
+- [`ocrSetValue`](./ocr-set-value)
+- [`ocrWaitForTextDisplayed`](./ocr-wait-for-text-displayed)
+
+in the following format:
+
+```ts
+{
+  androidRectangles: {
+    top: number;
+    left: number;
+    right: number;
+    bottom: number;
+  },
+  {
+    iOSRectangles: {
+      top: number;
+      left: number;
+      right: number;
+      bottom: number;
+    }
+  }
+}
+```
 
 If you would then change the script to this:
-
-<details>
-<summary>Click to expand and see the optimized test script.</summary>
 
 ```js
 describe('My OCR first test', () => {
@@ -184,12 +205,8 @@ describe('My OCR first test', () => {
   })
 })
 ```
-</details>
 
 Then you will see a different execution time.
-
-<details>
-<summary>Click to expand and see the local execution logs with re-using processed images enabled and cropping the seatch area.</summary>
 
 ```log
 [iPhone 11 iOS 14.2 #1-0] Spec: tests/e2e/specs/ocr.spec.ts
@@ -199,7 +216,7 @@ Then you will see a different execution time.
 [iPhone 11 iOS 14.2 #1-0] My OCR first test
 [iPhone 11 iOS 14.2 #1-0]    ✓ should be able to login with new ocr selectors and cropped images
 [iPhone 11 iOS 14.2 #1-0]
-[iPhone 11 iOS 14.2 #1-0] 1 passing (13.5s)
+[iPhone 11 iOS 14.2 #1-0] 1 passing (18.6s)
 ------------------------------------------------------------------
 [emulator-5554 Android 10 #0-0] Spec: tests/e2e/specs/ocr.spec.ts
 [emulator-5554 Android 10 #0-0] Running: emulator-5554 on Android 10 executing apps/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk
@@ -208,21 +225,19 @@ Then you will see a different execution time.
 [emulator-5554 Android 10 #0-0] My OCR first test
 [emulator-5554 Android 10 #0-0]    ✓ should be able to login with new ocr selectors and cropped images
 [emulator-5554 Android 10 #0-0]
-[emulator-5554 Android 10 #0-0] 1 passing (20.9s)
+[emulator-5554 Android 10 #0-0] 1 passing (25s)
 
 ```
-</details>
 
-This almost reduced the local execution time from **2 minutes** to **1 minute**.
+:::tip Cropping images
+This reduced the local execution time from **2 minutes** to **20-25 seconds!**.
+:::
 
-## Optimize by using a local installation of Tesseract
+## Using a local installation of Tesseract
 You can speed up your execution time to even less than a minute if you would have a local installation of Tessarect on
 your local machine and or in your pipeline (more information about installing Tesseract on your local system can be
 found [here](https://tesseract-ocr.github.io/tessdoc/Installation.html)). You can find the execution time of the same
 script using a local installation of Tesseract below.
-
-<details>
-<summary>Click to expand and see the local Tesseract execution logs.</summary>
 
 ```log
 [iPhone 11 iOS 14.2 #1-0] Spec: /tests/e2e/specs/ocr.spec.ts
@@ -243,4 +258,6 @@ script using a local installation of Tesseract below.
 [emulator-5554 Android 10 #0-0]
 [emulator-5554 Android 10 #0-0] 1 passing (17.2s)
 ```
-</details>
+:::tip Local installation
+This reduced the local execution time from **2 minutes** to **15-20 seconds!**.
+:::

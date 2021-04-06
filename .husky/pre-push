@@ -1,4 +1,0 @@
-#!/bin/sh
-
-npm run test.lint
-npm run test.unit

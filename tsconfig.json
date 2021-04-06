@@ -83,5 +83,5 @@
     /* Disallow inconsistently-cased references to the same file. */
   },
   "include": ["src/**/*"],
-  "exclude": ["src/__tests__/**/*"]
+  "exclude": ["build/**/*"]
 }

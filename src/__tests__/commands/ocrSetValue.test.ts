@@ -2,8 +2,8 @@ import ocrSetValue from '../../commands/ocrSetValue'
 import ocrKeys from '../../utils/ocrKeys'
 import ocrClickOnText from '../../commands/ocrClickOnText'
 
-jest.mock('../../utils/ocrKeys')
-jest.mock('../../commands/ocrClickOnText')
+jest.mock('../../utils/ocrKeys', ()=> jest.fn())
+jest.mock('../../commands/ocrClickOnText', ()=> jest.fn())
 
 describe('ocrSetValue', () => {
   it('should be able to set a value', async () => {

@@ -7,6 +7,7 @@ jest.mock('@wdio/logger', ()=>jest.fn().mockImplementation(()=>({
   info: jest.fn().mockImplementation((...infoArgs)=> logger.push(infoArgs)),
   warn: jest.fn().mockImplementation((...warnArgs)=> logger.push(warnArgs)),
 })))
+jest.mock('../../utils/ocrGetTextPositions', ()=> jest.fn())
 
 describe('ocrGetElementPositionByText', () => {
   let ocrGetTextPositionsSpy: jest.SpyInstance

@@ -1,13 +1,13 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const organizationName = 'wswebcreation' // Usually your GitHub org/user name.
 const projectName = 'wdio-ocr-service' // Usually your repo name.
-const branch = 'main'
+const pagesUrl = `https://${organizationName}.github.io`
 const repoUrl = `https://github.com/${organizationName}/${projectName}`
 
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'wdio-ocr-service',
+  tagline: 'A WebdriverIO service that is using Tesseract OCR for Appium Native App tests.',
+  url: pagesUrl,
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

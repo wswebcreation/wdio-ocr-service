@@ -1,11 +1,22 @@
 ---
 title: ocrClickOnText
 ---
-Click on an element by its visible text.
+Click on an element based on the provided texts.
+The command will search for the provided text and tries to find a match
+based on Fuzzy Logic from [Fuse.js](https://fusejs.io/). This means that if you might provide a selector with a typo, or
+the found text might not be a 100% match it will still try to give you back an element. See the [logs](#logs) below.
 
 ### Usage
 ```js
 driver.ocrClickOnText('Login')
+```
+
+### Logs
+```log
+# Still finding a match even though we searched for "Usernames" and the found text was "Username"
+[0-0] 2021-04-07T09:51:07.806Z INFO webdriver: COMMAND ocrClickOnText("Logins")
+[0-0] 2021-04-07T09:51:07.807Z INFO webdriver: RESULT true
+[0-0] 2021-04-07T09:51:07.811Z INFO wdio-ocr-service: We searched for the word "Logins" and found one match "Login" with score "88.89%"
 ```
 
 ### Options
@@ -28,7 +39,7 @@ driver.ocrClickOnText('Login')
 
 ### Example
 ```js
-it('should set the value of a visible element by using the visible text', () => {
+it('should click on an element based on text', () => {
   // Click on text
   driver.ocrClickOnText('Login')
 

@@ -1,7 +1,7 @@
 ---
 title: ocrGetText
 ---
-Get the text on an image
+Get the text on an image.
 
 ### Usage
 ```js

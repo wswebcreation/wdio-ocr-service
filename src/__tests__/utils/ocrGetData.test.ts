@@ -7,6 +7,7 @@ import ocrGetData from '../../utils/ocrGetData'
 jest.mock('fs')
 jest.mock('jimp', () => ({
   read: jest.fn().mockImplementation(() => ({
+    contrast: jest.fn(),
     greyscale: jest.fn(),
     getBufferAsync: jest.fn().mockReturnValue('getBufferAsync'),
   }))

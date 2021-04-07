@@ -143,7 +143,7 @@ export async function getSystemOcrData(options: GetOcrDataOptions): Promise<GetO
         throw Error(`An error happened when parsing the getSystemOcrData, see: ${error}`)
       }
 
-      text = data.alto.Layout[0]._
+      text = data.alto.Layout[0]._ || text
       composedBlocks = data.alto.Layout[0].Page[0].PrintSpace[0].ComposedBlock
     })
 
@@ -209,7 +209,7 @@ export async function getSystemOcrData(options: GetOcrDataOptions): Promise<GetO
     return {
       lines: jsonWordStrings,
       words: jsonSingleWords,
-      text,
+      text: text,
     }
   } catch (error) {
     throw Error(`An error happened when parsing the getSystemOcrData, see: ${error}`)

@@ -46,6 +46,7 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
       // Make it grey which will be better for OCR
       const image = await Jimp.read(Buffer.from(screenshot, 'base64'))
       image.greyscale()
+      image.contrast(1)
       const greyscaleImage = (await image.getBufferAsync(Jimp.MIME_PNG)).toString('base64')
 
       // Store it

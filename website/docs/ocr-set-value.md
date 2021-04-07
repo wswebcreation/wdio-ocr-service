@@ -6,9 +6,21 @@ Send a sequence of key strokes to an element. It will:
 - put focus on the field by clicking on it
 - set the value in the field
 
+The command will search for the provided text and tries to find a match
+based on Fuzzy Logic from [Fuse.js](https://fusejs.io/). This means that if you might provide a selector with a typo, or
+the found text might not be a 100% match it will still try to give you back an element. See the [logs](#logs) below.
+
 ### Usage
 ```js
 driver.ocrSetValue('Username', 'standard_user')
+```
+
+### Logs
+```log
+# Still finding a match even though we searched for "Usernames" and the found text was "Username"
+[0-0] 2021-04-07T09:51:07.806Z INFO webdriver: COMMAND ocrSetValue("Usernames", "standard_user")
+[0-0] 2021-04-07T09:51:07.807Z INFO webdriver: RESULT true
+[0-0] 2021-04-07T09:51:07.811Z INFO wdio-ocr-service: We searched for the word "Usernames" and found one match "Username" with score "88.89%"
 ```
 
 ### Options

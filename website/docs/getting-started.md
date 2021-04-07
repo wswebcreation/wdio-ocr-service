@@ -66,3 +66,34 @@ The following configuration options are supported and are all optional.
 | Option | Default | Description |
 | --- | --- | --- |
 | ocrImagesPath | `{project-root}/.tmp` | The folder where the OCR-results are stored |
+
+## Logs
+This module will automatically extra logs to the WebdriverIO logs. It writes to the `INFO` and `WARN` logs with the name
+`wdio-ocr-service`.
+Examples can be found below.
+
+```log
+..............................
+[0-0] 2021-04-07T09:51:06.344Z INFO webdriver: COMMAND ocrWaitForTextDisplayed("<Screenshot[base64]>", <object>)
+[0-0] 2021-04-07T09:51:06.346Z INFO webdriver: COMMAND takeScreenshot()
+[0-0] 2021-04-07T09:51:06.346Z INFO webdriver: [GET] http://127.0.0.1:4723/session/b4001383-bb09-46dc-84f9-7c15912ac248/screenshot
+[0-0] 2021-04-07T09:51:06.427Z INFO webdriver: RESULT iVBORw0KGgoAAAANSUhEUgAAAzwAAAcACAIAAACaY9F8AAAAAXNSR0IArs4c6...
+[0-0] 2021-04-07T09:51:07.112Z INFO wdio-ocr-service: Using system installed version of Tesseract
+[0-0] 2021-04-07T09:51:07.367Z INFO wdio-ocr-service: It took '0.255s' to process the image.
+[0-0] 2021-04-07T09:51:07.367Z INFO wdio-ocr-service: The following text was found through OCR:
+
+
+
+Username
+Password
+LOGIN
+
+
+[0-0] 2021-04-07T09:51:07.804Z INFO wdio-ocr-service: OCR Image with found text can be found here:
+
+ocr-images/ios-1617789066698.png
+[0-0] 2021-04-07T09:51:07.806Z INFO webdriver: COMMAND ocrSetValue("Usernames", "standard_user", <object>)
+[0-0] 2021-04-07T09:51:07.807Z INFO webdriver: RESULT true
+[0-0] 2021-04-07T09:51:07.811Z INFO wdio-ocr-service: We searched for the word "Usernames" and found one match "Username" with score "88.89%"
+...............
+```

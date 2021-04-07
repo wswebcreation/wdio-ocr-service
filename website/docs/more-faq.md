@@ -16,7 +16,7 @@ will become to brittle then the commands from this service can definitely help y
 
 ## My text isn't found, how is that possible?
 First it's important to understand how the OCR process in this module works, so please read
-[this](./what-is-wdio-ocr-service) page. If you still can't find your text, you might try the following things.
+[this](./) page. If you still can't find your text, you might try the following things.
 
 ### Image area is too big
 When the module needs to process a large area of the screenshot it might not find the text. You can provide a smaller

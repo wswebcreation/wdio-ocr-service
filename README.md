@@ -13,11 +13,13 @@ To check out the documentation visit
 [https://wswebcreation.github.io/wdio-ocr-service/](https://wswebcreation.github.io/wdio-ocr-service/)
 
 ## Contributing
-Top be done
+You like WebdriverIO and want to help making it better? Awesome! Check out our
+[Contributor Documentation](./CONTRIBUTING.MD) to get started with setting up the repo.
 
 ## TODO:
 - [x] Create Unit tests
 - [ ] provide language as an option, now English is the default
 - [ ] create contribution docs
+- [ ] provide offset options when we interact with an element
 - [x] provide the option to OCR in *restricted* areas
-- [ ] Build GitHub pages with a sample and instructions (?)
+- [x] Build GitHub pages with a sample and instructions

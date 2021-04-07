@@ -1,6 +1,8 @@
 import ocrClickOnText from '../../commands/ocrClickOnText'
 import * as OcrGetElementPositionByText from '../../commands/ocrGetElementPositionByText'
 
+jest.mock('../../commands/ocrGetElementPositionByText', ()=>jest.fn())
+
 describe('ocrClickOnText', () => {
   it('should be able to click on text with the correct arguments', async () => {
     const ocrGetElementPositionByTextSpy = jest.spyOn(OcrGetElementPositionByText, 'default')

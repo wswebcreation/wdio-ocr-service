@@ -11,6 +11,7 @@ interface OcrSetValueOptions {
   screenSize: ScreenSize;
   text: string;
   value: string;
+  clickDuration?: Number;
 }
 
 export default async function ocrSetValue(options: OcrSetValueOptions): Promise<void> {
@@ -23,6 +24,7 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
     screenSize,
     text,
     value,
+    clickDuration
   } = options
 
   await ocrClickOnText({
@@ -33,6 +35,7 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
     reuseOcr,
     screenSize,
     text,
+    clickDuration
   })
   await driver.waitUntil(
     async () => driver.isKeyboardShown(),

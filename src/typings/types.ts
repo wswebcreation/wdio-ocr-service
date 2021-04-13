@@ -34,12 +34,14 @@ export interface SetValueOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
   reuseOcr?: boolean;
+  clickDuration?: Number;
 }
 
 export interface ClickOnTextOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
   reuseOcr?: boolean;
+  clickDuration?: Number;
 }
 
 export interface GetTextOptions {

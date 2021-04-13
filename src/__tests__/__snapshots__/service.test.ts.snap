@@ -231,6 +231,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with al
     Array [
       Object {
         "androidRectangles": undefined,
+        "clickDuration": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
         "ocrImagesPath": "./.tmp",
@@ -248,6 +249,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with al
         "androidRectangles": Object {
           "foo": "androidRectangles",
         },
+        "clickDuration": undefined,
         "iOSRectangles": Object {
           "foo": "iOSRectangles",
         },
@@ -282,6 +284,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with no
     Array [
       Object {
         "androidRectangles": undefined,
+        "clickDuration": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
         "ocrImagesPath": "./.tmp",

@@ -10,6 +10,7 @@ interface OcrClickOnTextOptions {
   reuseOcr: boolean;
   screenSize: ScreenSize;
   text: string;
+  clickDuration?: Number;
 }
 
 export default async function ocrClickOnText(options: OcrClickOnTextOptions): Promise<void> {
@@ -29,7 +30,7 @@ export default async function ocrClickOnText(options: OcrClickOnTextOptions): Pr
           y,
         },
         { type: 'pointerDown', button: 0 },
-        { type: 'pause', duration: 500 },
+        { type: 'pause', duration: options.clickDuration ? options.clickDuration : 500 },
         { type: 'pointerUp', button: 0 },
       ],
     },

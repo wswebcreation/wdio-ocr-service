@@ -111,7 +111,7 @@ export default class OcrService implements Services.ServiceInstance {
     this._driver.addCommand(
       'ocrSetValue',
       (selector: string, value: string, options: SetValueOptions = {}) => {
-        const { androidRectangles, iOSRectangles, reuseOcr } = options
+        const { androidRectangles, iOSRectangles, reuseOcr, clickDuration } = options
 
         return ocrSetValue({
           androidRectangles,
@@ -122,6 +122,7 @@ export default class OcrService implements Services.ServiceInstance {
           screenSize,
           text: selector,
           value,
+          clickDuration,
         })
       }
     )

@@ -30,6 +30,7 @@ driver.ocrSetValue('Username', 'standard_user')
 | selector | `string` | | The visual name of the field |
 | value | `string` | | Value to be added |
 | options (optional) | `SetValueOptions` | `{}` | command options |
+| options.clickDuration (optional) | `number` | 500 | Duration of the click in milliseconds |
 | options.androidRectangles (optional) | `Rectangles` | | Rectangles for Android to crop the search area for OCR |
 | options.androidRectangles.top | `number` | | Start position from the top of the screen to start cropping the search area for OCR |
 | options.androidRectangles.left | `number` | | Start position from the left of the screen to start cropping the search area for OCR |

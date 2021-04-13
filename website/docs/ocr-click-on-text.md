@@ -25,6 +25,7 @@ driver.ocrClickOnText('Login')
 | --- | --- | ---| --- |
 | selector | `string` | | The visual name of the field |
 | options (optional) | `SetValueOptions` | `{}` | command options |
+| options.clickDuration (optional) | `number` | 500 | Duration of the click in milliseconds|
 | options.reuseOcr (optional) | `boolean` | `false` | Re-use a previous OCR scan if it is available |
 | options.androidRectangles (optional) | `Rectangles` | | Rectangles for Android to crop the search area for OCR |
 | options.androidRectangles.top | `number` | | Start position from the top of the screen to start cropping the search area for OCR |

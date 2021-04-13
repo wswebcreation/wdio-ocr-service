@@ -6,6 +6,7 @@ exports[`ocrSetValue should be able to set a value 1`] = `
     Array [
       Object {
         "androidRectangles": undefined,
+        "clickDuration": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": true,
         "ocrImagesPath": "ocrImagesPath",

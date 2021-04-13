@@ -36,6 +36,11 @@ will result in not finding the `Email`, `Password` or `Login` text.
 
 ![Contrast issues](../static/img/contrast-issue.png)
 
+## Why is my element getting clicked but the keyboard never pops up?
+This can happen on some text fields where the click is determined too long and considered a long tap.
+You can use the `clickDuration` option on `ocrClickOnText` and `ocrSetValue` to alleviate this.  
+See [here](./ocr-click-on-text#options).
+
 ## Can I provide an offset for interacting with an element?
 No, this is currently not possible, but is on the roadmap.
 

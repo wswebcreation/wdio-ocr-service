@@ -10,8 +10,8 @@ exports[`ocrClickOnText should be able to click on text with a different clickDu
             Object {
               "duration": 0,
               "type": "pointerMove",
-              "x": 3.5,
-              "y": 1.5,
+              "x": 4,
+              "y": 2,
             },
             Object {
               "button": 0,
@@ -54,8 +54,8 @@ exports[`ocrClickOnText should be able to click on text with the correct argumen
             Object {
               "duration": 0,
               "type": "pointerMove",
-              "x": 3.5,
-              "y": 1.5,
+              "x": 4,
+              "y": 2,
             },
             Object {
               "button": 0,

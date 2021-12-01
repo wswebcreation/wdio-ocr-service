@@ -24,8 +24,8 @@ export function getDprPositions(values: Rectangles, dpr: number): Rectangles {
  */
 export function determineClickPoint(options: DetermineClickPointOptions): ClickPoint {
   const { rectangles: { left, right, top, bottom } } = options
-  const x = left + (right - left) / 2
-  const y = top + (bottom - top) / 2
+  const x = Math.round( left + (right - left) / 2 )
+  const y = Math.round( top + (bottom - top) / 2 )
 
   return { x, y }
 }

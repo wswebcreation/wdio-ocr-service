@@ -22,7 +22,7 @@ export default async function createImage(data: CreateImageData) {
   const sxDx = left ? left : 0
   const syDy = top ? top : 0
   const sdHeight = bottom && (top || top === 0) ? Math.abs (bottom - top ) : height
-  const sdWidth = (left || left === 0) && right ?  Math.abs (left - right ) : width
+  const sdWidth = (left || left === 0) && right ?  Math.abs (right - left ) : width
 
   context.drawImage(
     image,
@@ -44,10 +44,10 @@ export default async function createImage(data: CreateImageData) {
 
       context.beginPath()
       context.fillStyle = 'rgba(57, 170, 86, 0.5)'
-      context.fillRect(left, top, Math.abs (left - right ), Math.abs(bottom - top ))
+      context.fillRect(left, top, Math.abs (right - left ), Math.abs(bottom - top ))
       context.lineWidth = 2
       context.strokeStyle = '#39aa56'
-      context.rect(left, top, Math.abs (left - right ), Math.abs(bottom - top ))
+      context.rect(left, top, Math.abs (right - left ), Math.abs(bottom - top ))
       context.stroke()
     })
   }

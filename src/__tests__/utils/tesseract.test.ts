@@ -55,7 +55,7 @@ describe('utils - tesseract', () => {
       }))
 
       try {
-        await getNodeOcrData({ filePath: 'path/file.png' })
+        await getNodeOcrData({ filePath: 'path/file.png', language: 'eng' })
         // Don't expect it to hit this
         expect(true).toBe(false)
       } catch (e) {
@@ -78,7 +78,7 @@ describe('utils - tesseract', () => {
       }))
 
       try {
-        await getNodeOcrData({ filePath: 'path/file.png' })
+        await getNodeOcrData({ filePath: 'path/file.png', language: 'eng' })
         // Don't expect it to hit this
         expect(true).toBe(false)
       } catch (e) {
@@ -102,7 +102,7 @@ describe('utils - tesseract', () => {
       }))
 
       try {
-        await getNodeOcrData({ filePath: 'path/file.png' })
+        await getNodeOcrData({ filePath: 'path/file.png', language: 'eng' })
         // Don't expect it to hit this
         expect(true).toBe(false)
       } catch (e) {
@@ -123,7 +123,7 @@ describe('utils - tesseract', () => {
         terminate: jest.fn(),
       }))
 
-      expect(await getNodeOcrData({ filePath: 'path/file.png' })).toMatchSnapshot()
+      expect(await getNodeOcrData({ filePath: 'path/file.png', language: 'eng' })).toMatchSnapshot()
       expect(parseAttributeStringSpy).toHaveBeenCalledTimes(10)
     })
   })
@@ -133,7 +133,7 @@ describe('utils - tesseract', () => {
       (TesseractSystem.recognize as unknown as jest.Mock).mockResolvedValue('')
 
       try {
-        await getSystemOcrData({ filePath: 'path/file.png' })
+        await getSystemOcrData({ filePath: 'path/file.png', language: 'eng' })
         // Don't expect it to hit this
         expect(true).toBe(false)
       } catch (e) {
@@ -148,7 +148,7 @@ describe('utils - tesseract', () => {
       (TesseractSystem.recognize as unknown as jest.Mock).mockResolvedValue(true)
 
       try {
-        await getSystemOcrData({ filePath: 'path/file.png' })
+        await getSystemOcrData({ filePath: 'path/file.png', language: 'eng' })
         // Don't expect it to hit this
         expect(true).toBe(false)
       } catch (e) {
@@ -165,7 +165,7 @@ describe('utils - tesseract', () => {
         .mockResolvedValue('<alto><Layout><Page><PrintSpace></PrintSpace></Page></Layout></alto>')
 
       try {
-        await getSystemOcrData({ filePath: 'path/file.png' })
+        await getSystemOcrData({ filePath: 'path/file.png', language: 'eng' })
         // Don't expect it to hit this
         expect(true).toBe(false)
       } catch (e) {
@@ -180,7 +180,7 @@ describe('utils - tesseract', () => {
     it('should be able to parse the system OCR data', async ()=>{
       (TesseractSystem.recognize as unknown as jest.Mock).mockResolvedValue(TESSERACT_SYSTEM)
 
-      expect(await getSystemOcrData({ filePath: 'path/file.png' })).toMatchSnapshot()
+      expect(await getSystemOcrData({ filePath: 'path/file.png', language: 'eng' })).toMatchSnapshot()
     })
   })
 })

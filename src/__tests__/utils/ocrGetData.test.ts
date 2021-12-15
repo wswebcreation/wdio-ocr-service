@@ -57,6 +57,7 @@ describe('utils - ocrGetData', () => {
     const options = {
       isTesseractAvailable: false,
       ocrImagesPath: 'ocrImagesPath',
+      tesseractLang: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -86,6 +87,7 @@ describe('utils - ocrGetData', () => {
       androidRectangles: { left: 10, top: 20, right: 30, bottom: 40 },
       isTesseractAvailable: false,
       ocrImagesPath: 'ocrImagesPath',
+      tesseractLang: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -112,6 +114,7 @@ describe('utils - ocrGetData', () => {
       iOSRectangles: { left: 10, top: 20, right: 30, bottom: 40 },
       isTesseractAvailable: false,
       ocrImagesPath: 'ocrImagesPath',
+      tesseractLang: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -139,6 +142,7 @@ describe('utils - ocrGetData', () => {
     const options = {
       isTesseractAvailable: false,
       ocrImagesPath: 'string',
+      tesseractLang: 'eng',
       reuseOcr: true,
       screenSize: {
         height: 200,
@@ -154,6 +158,7 @@ describe('utils - ocrGetData', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
+      tesseractLang: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,

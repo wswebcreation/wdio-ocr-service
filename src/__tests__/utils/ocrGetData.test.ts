@@ -77,7 +77,7 @@ describe('utils - ocrGetData', () => {
     expect(dateSpy).toHaveBeenCalled()
     expect(fs.writeFileSync).toHaveBeenCalledWith('ocrImagesPath/android-1466424490000.png', 'getBufferAsync', { 'encoding': 'base64' })
     expect(getSystemOcrDataSpy).not.toHaveBeenCalled()
-    expect(getNodeOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png' })
+    expect(getNodeOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png', language: 'eng' })
     expect(createImage).toHaveBeenCalledWithSnapshot()
     expect(logger).toMatchSnapshot()
   })
@@ -173,7 +173,7 @@ describe('utils - ocrGetData', () => {
     getSystemOcrDataSpy.mockResolvedValue(ocrData)
 
     expect(await ocrGetData(options)).toMatchSnapshot()
-    expect(getSystemOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png' })
+    expect(getSystemOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png', language: 'eng' })
     expect(getNodeOcrDataSpy).not.toHaveBeenCalled()
     expect(logger).toMatchSnapshot()
   })

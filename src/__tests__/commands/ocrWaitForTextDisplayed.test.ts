@@ -8,6 +8,7 @@ describe('ocrWaitForTextDisplayed', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
+      tesseractLang: 'eng',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',

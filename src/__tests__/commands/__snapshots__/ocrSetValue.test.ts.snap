@@ -15,6 +15,7 @@ exports[`ocrSetValue should be able to set a value 1`] = `
           "height": 2,
           "width": 1,
         },
+        "tesseractLang": "eng",
         "text": "text",
       },
     ],

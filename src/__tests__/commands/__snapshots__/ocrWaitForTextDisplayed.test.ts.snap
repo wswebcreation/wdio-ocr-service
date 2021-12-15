@@ -14,6 +14,7 @@ exports[`ocrWaitForTextDisplayed should be able to wait for a text to be display
           "height": 2,
           "width": 1,
         },
+        "tesseractLang": "eng",
       },
     ],
   ],

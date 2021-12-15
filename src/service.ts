@@ -15,16 +15,19 @@ import {
 } from './typings/types'
 import ocrWaitForTextDisplayed from './commands/ocrWaitForTextDisplayed'
 import { isTesseractAvailable } from './utils/tesseract'
-import { OCR_IMAGES_PATH } from './utils/constants'
+import { OCR_IMAGES_PATH, DEFAULT_TESSERACT_LANG } from './utils/constants'
 
 export default class OcrService implements Services.ServiceInstance {
   private _ocrImagesPath = OCR_IMAGES_PATH
+  private _ocrLanguage = DEFAULT_TESSERACT_LANG
   private _driver?: WebdriverIO.Browser | WebdriverIO.MultiRemoteBrowser
 
   constructor(private _options: OcrServiceConfig = {}) {
     this._ocrImagesPath = this._options.ocrImagesPath || this._ocrImagesPath
 
     mkdirSync(this._ocrImagesPath, { recursive: true })
+
+    this._ocrLanguage = this._options.ocrLanguage || this._ocrLanguage
   }
 
   async before(
@@ -51,6 +54,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          tesseractLang: this._ocrLanguage,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
@@ -68,6 +72,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          tesseractLang: this._ocrLanguage,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
@@ -83,6 +88,7 @@ export default class OcrService implements Services.ServiceInstance {
         androidRectangles,
         iOSRectangles,
         isTesseractAvailable: tesseractAvailable,
+        tesseractLang: this._ocrLanguage,
         reuseOcr: !!reuseOcr,
         ocrImagesPath: this._ocrImagesPath,
         screenSize,
@@ -99,6 +105,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          tesseractLang: this._ocrLanguage,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
           text: selector,
@@ -117,6 +124,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          tesseractLang: this._ocrLanguage,
           ocrImagesPath: this._ocrImagesPath,
           reuseOcr: !!reuseOcr,
           screenSize,

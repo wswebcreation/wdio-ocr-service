@@ -5,6 +5,7 @@ interface OcrGetTextOptions {
   androidRectangles?:Rectangles;
   iOSRectangles?:Rectangles;
   isTesseractAvailable: boolean;
+  tesseractLang: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;

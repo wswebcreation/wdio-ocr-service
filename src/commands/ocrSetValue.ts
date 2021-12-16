@@ -5,8 +5,8 @@ import ocrClickOnText from './ocrClickOnText'
 interface OcrSetValueOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
+  tesseractLang?: string;
   isTesseractAvailable: boolean;
-  tesseractLang: string;
   reuseOcr: boolean;
   ocrImagesPath: string;
   screenSize: ScreenSize;

@@ -12,7 +12,7 @@ The easiest way is to keep `wdio-ocr-service` as a devDependency in your `packag
 ```json
 {
   "devDependencies": {
-    "wdio-ocr-service": "0.1.0"
+    "wdio-ocr-service": "1.1.2"
   }
 }
 ```
@@ -23,7 +23,7 @@ You can simply do it by:
 npm install wdio-ocr-service@next --save-dev
 ```
 
-Instructions on how to install `WebdriverIO` can be found [here.](https://webdriver.io/docs/gettingstarted.html).
+Instructions on how to install `WebdriverIO` can be found [here.](https://webdriver.io/docs/gettingstarted.html)
 
 :::note
 This module uses Tesseract as an OCR engine. By default, it will verify if you have a local installation of
@@ -54,6 +54,7 @@ exports.config = {
       {
         // The OCR options
         ocrImagesPath: 'ocr-images/',
+        ocrLanguage: 'eng'
       },
     ]
   ],
@@ -66,6 +67,7 @@ The following configuration options are supported and are all optional.
 | Option | Default | Description |
 | --- | --- | --- |
 | ocrImagesPath | `{project-root}/.tmp` | The folder where the OCR-results are stored |
+| ocrLanguage | `eng` | The language that Tesseract will recognize
 
 ## Logs
 This module will automatically extra logs to the WebdriverIO logs. It writes to the `INFO` and `WARN` logs with the name

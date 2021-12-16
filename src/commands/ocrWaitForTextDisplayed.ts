@@ -4,9 +4,9 @@ import ocrGetText from './ocrGetText'
 interface OcrWaitForTextDisplayedOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
+  tesseractLang?: string;
   isTesseractAvailable: boolean;
   ocrImagesPath: string;
-  tesseractLang: string;
   screenSize: ScreenSize;
   text: string;
   timeout?: number;

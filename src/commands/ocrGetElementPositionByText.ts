@@ -9,8 +9,8 @@ const log = logger(SERVICE_NAME)
 interface OcrGetElementPositionByTextOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
+  tesseractLang?: string;
   isTesseractAvailable: boolean;
-  tesseractLang: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;
@@ -88,8 +88,8 @@ export default async function ocrGetElementPositionByText(
   const {
     androidRectangles,
     iOSRectangles,
-    isTesseractAvailable,
     tesseractLang,
+    isTesseractAvailable,
     ocrImagesPath,
     reuseOcr,
     screenSize,
@@ -98,8 +98,8 @@ export default async function ocrGetElementPositionByText(
   const textPositions = await ocrGetTextPositions({
     androidRectangles,
     iOSRectangles,
-    isTesseractAvailable,
     tesseractLang,
+    isTesseractAvailable,
     ocrImagesPath,
     reuseOcr,
     screenSize,

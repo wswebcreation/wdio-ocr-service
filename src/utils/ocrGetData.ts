@@ -11,8 +11,8 @@ import { getNodeOcrData, getSystemOcrData } from './tesseract'
 interface OcrGetDataOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
+  tesseractLang?: string;
   isTesseractAvailable: boolean;
-  tesseractLang: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;
@@ -29,8 +29,8 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
   const {
     androidRectangles,
     iOSRectangles,
-    isTesseractAvailable,
     tesseractLang,
+    isTesseractAvailable,
     ocrImagesPath,
     reuseOcr,
     screenSize,

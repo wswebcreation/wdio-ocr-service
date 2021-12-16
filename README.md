@@ -17,7 +17,7 @@ You like WebdriverIO and want to help making it better? Awesome! Check out our
 
 ## TODO:
 - [x] Create Unit tests
-- [ ] provide language as an option, now English is the default
+- [x] provide language as an option, now English is the default
 - [ ] create contribution docs
 - [ ] provide offset options when we interact with an element
 - [x] provide the option to OCR in *restricted* areas

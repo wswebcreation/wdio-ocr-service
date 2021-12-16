@@ -67,7 +67,7 @@ The following configuration options are supported and are all optional.
 | Option | Default | Description |
 | --- | --- | --- |
 | ocrImagesPath | `{project-root}/.tmp` | The folder where the OCR-results are stored |
-| ocrLanguage | `eng` | The language that Tesseract will recognize
+| ocrLanguage | `eng` | The language that Tesseract will recognize. More info [here.](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html)
 
 ## Logs
 This module will automatically extra logs to the WebdriverIO logs. It writes to the `INFO` and `WARN` logs with the name

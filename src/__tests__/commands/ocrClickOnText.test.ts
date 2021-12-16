@@ -54,7 +54,7 @@ describe('ocrClickOnText', () => {
     expect(globalAny.driver.performActions).toHaveBeenCalledWithSnapshot()
   })
 
-  it('should be able to click on text without providing a language', async () => {
+  it('should be able to click on text by not providing a language', async () => {
     const globalAny:any = global
     const options = {
       isTesseractAvailable: true,
@@ -73,7 +73,7 @@ describe('ocrClickOnText', () => {
     expect(globalAny.driver.performActions).toHaveBeenCalledWithSnapshot()
   })
 
-  it('should be able to click on text with providing a language', async () => {
+  it('should be able to click on text by providing a language', async () => {
     const globalAny:any = global
     const options = {
       isTesseractAvailable: true,

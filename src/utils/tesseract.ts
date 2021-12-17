@@ -21,7 +21,7 @@ export function isTesseractAvailable(tesseractName: string = ''): boolean {
 
 interface GetOcrDataOptions {
   filePath: string;
-  language?: string;
+  language: string;
 }
 
 export async function getNodeOcrData(options: GetOcrDataOptions): Promise<GetOcrData|Error> {

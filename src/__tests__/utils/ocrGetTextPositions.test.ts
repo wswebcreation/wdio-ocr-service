@@ -80,7 +80,7 @@ describe('utils - ocrGetTextPositions', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'string',
-      tesseractLang: 'eng',
+      language: 'eng',
       reuseOcr: true,
       screenSize: {
         width: 123,

@@ -33,7 +33,7 @@ describe('ocrGetElementPositionByText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'eng',
+      language: 'eng',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',
@@ -57,7 +57,7 @@ describe('ocrGetElementPositionByText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'eng',
+      language: 'eng',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',
@@ -91,7 +91,7 @@ describe('ocrGetElementPositionByText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'eng',
+      language: 'eng',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',
@@ -124,7 +124,7 @@ describe('ocrGetElementPositionByText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'eng',
+      language: 'eng',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',

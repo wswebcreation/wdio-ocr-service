@@ -11,8 +11,8 @@ import { getNodeOcrData, getSystemOcrData } from './tesseract'
 interface OcrGetDataOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
-  tesseractLang?: string;
   isTesseractAvailable: boolean;
+  language: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;
@@ -29,8 +29,8 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
   const {
     androidRectangles,
     iOSRectangles,
-    tesseractLang,
     isTesseractAvailable,
+    language,
     ocrImagesPath,
     reuseOcr,
     screenSize,
@@ -56,9 +56,6 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
       const filePath = join(ocrImagesPath, fileName)
       writeFileSync(filePath, greyscaleImage, { encoding: 'base64' })
 
-      //OCR Language setup
-      const language = tesseractLang
-
       // Crop the image on the original canvas if needed so OCR will be more accurate
       if (androidRectangles || iOSRectangles) {
         const rectangles = driver.isAndroid ? androidRectangles : iOSRectangles
@@ -77,10 +74,10 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
 
       if (isTesseractAvailable) {
         log.info('Using system installed version of Tesseract')
-        ocrData = await getSystemOcrData({ filePath, language })
+        ocrData = await getSystemOcrData({ filePath, language: language })
       } else {
         log.info('Using NodeJS version of Tesseract')
-        ocrData = await getNodeOcrData({ filePath, language })
+        ocrData = await getNodeOcrData({ filePath, language: language })
       }
 
       const diff = process.hrtime(start)

@@ -5,8 +5,8 @@ import ocrClickOnText from './ocrClickOnText'
 interface OcrSetValueOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
-  tesseractLang?: string;
   isTesseractAvailable: boolean;
+  language: string;
   reuseOcr: boolean;
   ocrImagesPath: string;
   screenSize: ScreenSize;
@@ -20,7 +20,7 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
-    tesseractLang,
+    language,
     reuseOcr,
     ocrImagesPath,
     screenSize,
@@ -33,7 +33,7 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
-    tesseractLang,
+    language,
     ocrImagesPath,
     reuseOcr,
     screenSize,

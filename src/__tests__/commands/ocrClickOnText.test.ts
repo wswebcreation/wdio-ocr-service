@@ -17,7 +17,7 @@ describe('ocrClickOnText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'deu',
+      language: 'deu',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',
@@ -38,50 +38,11 @@ describe('ocrClickOnText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'nld',
+      language: 'nld',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',
       clickDuration: 250
-    }
-
-    globalAny.driver = {
-      performActions: jest.fn(),
-    }
-
-    await ocrClickOnText(options)
-
-    expect(globalAny.driver.performActions).toHaveBeenCalledWithSnapshot()
-  })
-
-  it('should be able to click on text by not providing a language', async () => {
-    const globalAny:any = global
-    const options = {
-      isTesseractAvailable: true,
-      ocrImagesPath: 'ocrImagesPath',
-      reuseOcr: true,
-      screenSize: { width: 1, height: 2 },
-      text: 'text',
-    }
-
-    globalAny.driver = {
-      performActions: jest.fn(),
-    }
-
-    await ocrClickOnText(options)
-
-    expect(globalAny.driver.performActions).toHaveBeenCalledWithSnapshot()
-  })
-
-  it('should be able to click on text by providing a language', async () => {
-    const globalAny:any = global
-    const options = {
-      isTesseractAvailable: true,
-      ocrImagesPath: 'ocrImagesPath',
-      tesseractLang: 'nld',
-      reuseOcr: true,
-      screenSize: { width: 1, height: 2 },
-      text: 'text',
     }
 
     globalAny.driver = {

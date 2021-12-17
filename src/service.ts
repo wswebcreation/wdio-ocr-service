@@ -50,8 +50,8 @@ export default class OcrService implements Services.ServiceInstance {
         return ocrElementPositionByText({
           androidRectangles,
           iOSRectangles,
-          tesseractLang: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
@@ -68,8 +68,8 @@ export default class OcrService implements Services.ServiceInstance {
         return ocrClickOnText({
           androidRectangles,
           iOSRectangles,
-          tesseractLang: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
@@ -84,8 +84,8 @@ export default class OcrService implements Services.ServiceInstance {
       return ocrGetText({
         androidRectangles,
         iOSRectangles,
-        tesseractLang: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
         isTesseractAvailable: tesseractAvailable,
+        language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
         reuseOcr: !!reuseOcr,
         ocrImagesPath: this._ocrImagesPath,
         screenSize,
@@ -101,8 +101,8 @@ export default class OcrService implements Services.ServiceInstance {
         return ocrWaitForTextDisplayed({
           androidRectangles,
           iOSRectangles,
-          tesseractLang: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
           text: selector,
@@ -120,8 +120,8 @@ export default class OcrService implements Services.ServiceInstance {
         return ocrSetValue({
           androidRectangles,
           iOSRectangles,
-          tesseractLang: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           ocrImagesPath: this._ocrImagesPath,
           reuseOcr: !!reuseOcr,
           screenSize,

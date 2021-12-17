@@ -4,8 +4,8 @@ import { Rectangles, ScreenSize } from '../typings/types'
 interface OcrGetTextOptions {
   androidRectangles?:Rectangles;
   iOSRectangles?:Rectangles;
-  tesseractLang?: string;
   isTesseractAvailable: boolean;
+  language: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;

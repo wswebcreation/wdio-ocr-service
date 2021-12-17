@@ -4,9 +4,9 @@ import ocrGetText from './ocrGetText'
 interface OcrWaitForTextDisplayedOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
-  tesseractLang?: string;
   isTesseractAvailable: boolean;
   ocrImagesPath: string;
+  language: string;
   screenSize: ScreenSize;
   text: string;
   timeout?: number;
@@ -20,14 +20,14 @@ export default async function ocrWaitForTextDisplayed(
 
   return driver.waitUntil(
     async () => {
-      const { androidRectangles, iOSRectangles, isTesseractAvailable, tesseractLang, ocrImagesPath, screenSize, text } = options
+      const { androidRectangles, iOSRectangles, isTesseractAvailable, language, ocrImagesPath, screenSize, text } = options
 
       return (
         await ocrGetText({
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable,
-          tesseractLang,
+          language,
           ocrImagesPath,
           // Always use a clean OCR
           reuseOcr: false,

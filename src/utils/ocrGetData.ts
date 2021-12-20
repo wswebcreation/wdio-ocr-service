@@ -12,6 +12,7 @@ interface OcrGetDataOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
   isTesseractAvailable: boolean;
+  language: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;
@@ -29,6 +30,7 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
+    language,
     ocrImagesPath,
     reuseOcr,
     screenSize,
@@ -72,10 +74,10 @@ export default async function ocrGetData(options: OcrGetDataOptions): Promise<Oc
 
       if (isTesseractAvailable) {
         log.info('Using system installed version of Tesseract')
-        ocrData = await getSystemOcrData({ filePath })
+        ocrData = await getSystemOcrData({ filePath, language: language })
       } else {
         log.info('Using NodeJS version of Tesseract')
-        ocrData = await getNodeOcrData({ filePath })
+        ocrData = await getNodeOcrData({ filePath, language: language })
       }
 
       const diff = process.hrtime(start)

@@ -9,6 +9,7 @@ exports[`ocrSetValue should be able to set a value 1`] = `
         "clickDuration": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": true,
+        "language": "eng",
         "ocrImagesPath": "ocrImagesPath",
         "reuseOcr": true,
         "screenSize": Object {

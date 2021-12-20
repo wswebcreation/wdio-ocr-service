@@ -27,7 +27,7 @@ This service will
    contrast is needed to prevent a lot of image background noise).
 1. uses [Optical Character Recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) from
    [Tesseract](https://github.com/tesseract-ocr/tesseract) to get all text from the screen and highlight all found text
-   on an image
+   on an image. Can support several languages, all supported languages can be found [here.](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html)
 1. uses Fuzzy Logic from [Fuse.js](https://fusejs.io/) to find strings that are *approximately equal* to a given pattern
    (rather than exactly). This means for example that the search value `Username` can also find the text `Usename` or
    visa versa.

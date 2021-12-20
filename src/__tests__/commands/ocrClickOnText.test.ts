@@ -17,6 +17,7 @@ describe('ocrClickOnText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'deu',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',
@@ -37,6 +38,7 @@ describe('ocrClickOnText', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'nld',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',

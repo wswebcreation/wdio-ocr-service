@@ -57,6 +57,7 @@ describe('utils - ocrGetData', () => {
     const options = {
       isTesseractAvailable: false,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -76,7 +77,7 @@ describe('utils - ocrGetData', () => {
     expect(dateSpy).toHaveBeenCalled()
     expect(fs.writeFileSync).toHaveBeenCalledWith('ocrImagesPath/android-1466424490000.png', 'getBufferAsync', { 'encoding': 'base64' })
     expect(getSystemOcrDataSpy).not.toHaveBeenCalled()
-    expect(getNodeOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png' })
+    expect(getNodeOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png', language: 'eng' })
     expect(createImage).toHaveBeenCalledWithSnapshot()
     expect(logger).toMatchSnapshot()
   })
@@ -86,6 +87,7 @@ describe('utils - ocrGetData', () => {
       androidRectangles: { left: 10, top: 20, right: 30, bottom: 40 },
       isTesseractAvailable: false,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -112,6 +114,7 @@ describe('utils - ocrGetData', () => {
       iOSRectangles: { left: 10, top: 20, right: 30, bottom: 40 },
       isTesseractAvailable: false,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -139,6 +142,7 @@ describe('utils - ocrGetData', () => {
     const options = {
       isTesseractAvailable: false,
       ocrImagesPath: 'string',
+      language: 'eng',
       reuseOcr: true,
       screenSize: {
         height: 200,
@@ -154,6 +158,7 @@ describe('utils - ocrGetData', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'eng',
       reuseOcr: false,
       screenSize: {
         height: 200,
@@ -168,7 +173,7 @@ describe('utils - ocrGetData', () => {
     getSystemOcrDataSpy.mockResolvedValue(ocrData)
 
     expect(await ocrGetData(options)).toMatchSnapshot()
-    expect(getSystemOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png' })
+    expect(getSystemOcrDataSpy).toHaveBeenCalledWith({ filePath: 'ocrImagesPath/android-1466424490000.png', language: 'eng' })
     expect(getNodeOcrDataSpy).not.toHaveBeenCalled()
     expect(logger).toMatchSnapshot()
   })

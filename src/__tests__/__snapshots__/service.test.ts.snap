@@ -8,7 +8,23 @@ exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
         "reuseOcr": false,
         "screenSize": Object {
           "height": 400,
@@ -26,6 +42,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with
           "foo": "iOSRectangles",
         },
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": true,
         "screenSize": Object {
@@ -37,6 +54,103 @@ exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with all options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
     Object {
       "type": "return",
       "value": undefined,
@@ -57,6 +171,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": false,
         "screenSize": Object {
@@ -76,6 +191,53 @@ exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with
 }
 `;
 
+exports[`wdio-ocr-service before hook should be able to call ocrClickOnText with no options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "click",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositionByText with all options 1`] = `
 [MockFunction] {
   "calls": Array [
@@ -84,7 +246,23 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositi
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
         "reuseOcr": false,
         "screenSize": Object {
           "height": 400,
@@ -102,6 +280,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositi
           "foo": "iOSRectangles",
         },
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": true,
         "screenSize": Object {
@@ -113,6 +292,103 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositi
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositionByText with all options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
     Object {
       "type": "return",
       "value": undefined,
@@ -133,6 +409,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositi
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": false,
         "screenSize": Object {
@@ -152,6 +429,53 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositi
 }
 `;
 
+exports[`wdio-ocr-service before hook should be able to call ocrGetElementPositionByText with no options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "foo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`wdio-ocr-service before hook should be able to call ocrGetText with all options 1`] = `
 [MockFunction] {
   "calls": Array [
@@ -160,7 +484,22 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetText with all
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
         "reuseOcr": false,
         "screenSize": Object {
           "height": 400,
@@ -177,6 +516,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetText with all
           "foo": "iOSRectangles",
         },
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": true,
         "screenSize": Object {
@@ -187,6 +527,99 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetText with all
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrGetText with all options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
     Object {
       "type": "return",
       "value": undefined,
@@ -207,6 +640,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetText with no 
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": false,
         "screenSize": Object {
@@ -225,6 +659,51 @@ exports[`wdio-ocr-service before hook should be able to call ocrGetText with no 
 }
 `;
 
+exports[`wdio-ocr-service before hook should be able to call ocrGetText with no options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`wdio-ocr-service before hook should be able to call ocrSetValue with all options 1`] = `
 [MockFunction] {
   "calls": Array [
@@ -234,7 +713,25 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with al
         "clickDuration": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "clickDuration": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
         "reuseOcr": false,
         "screenSize": Object {
           "height": 400,
@@ -254,6 +751,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with al
           "foo": "iOSRectangles",
         },
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": true,
         "screenSize": Object {
@@ -266,6 +764,111 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with al
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrSetValue with all options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "clickDuration": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "clickDuration": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "clickDuration": undefined,
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "clickDuration": undefined,
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": true,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
     Object {
       "type": "return",
       "value": undefined,
@@ -287,6 +890,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with no
         "clickDuration": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "reuseOcr": false,
         "screenSize": Object {
@@ -307,6 +911,57 @@ exports[`wdio-ocr-service before hook should be able to call ocrSetValue with no
 }
 `;
 
+exports[`wdio-ocr-service before hook should be able to call ocrSetValue with no options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "clickDuration": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "clickDuration": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "reuseOcr": false,
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrSetValue-selector",
+        "value": "ocrSetValue",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
 exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDisplayed with all options 1`] = `
 [MockFunction] {
   "calls": Array [
@@ -315,7 +970,24 @@ exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDispl
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
         "screenSize": Object {
           "height": 400,
           "width": 200,
@@ -334,6 +1006,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDispl
           "foo": "iOSRectangles",
         },
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "screenSize": Object {
           "height": 400,
@@ -354,6 +1027,107 @@ exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDispl
       "type": "return",
       "value": undefined,
     },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDisplayed with all options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": 15,
+        "timeoutMsg": "timeoutMsg",
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": Object {
+          "foo": "androidRectangles",
+        },
+        "iOSRectangles": Object {
+          "foo": "iOSRectangles",
+        },
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": 15,
+        "timeoutMsg": "timeoutMsg",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
   ],
 }
 `;
@@ -366,6 +1140,7 @@ exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDispl
         "androidRectangles": undefined,
         "iOSRectangles": undefined,
         "isTesseractAvailable": false,
+        "language": "eng",
         "ocrImagesPath": "./.tmp",
         "screenSize": Object {
           "height": 400,
@@ -378,6 +1153,55 @@ exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDispl
     ],
   ],
   "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`wdio-ocr-service before hook should be able to call ocrWaitForTextDisplayed with no options and providing different language and images path 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "eng",
+        "ocrImagesPath": "./.tmp",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+    Array [
+      Object {
+        "androidRectangles": undefined,
+        "iOSRectangles": undefined,
+        "isTesseractAvailable": false,
+        "language": "nld",
+        "ocrImagesPath": "./ocrImages",
+        "screenSize": Object {
+          "height": 400,
+          "width": 200,
+        },
+        "text": "ocrWaitForTextDisplayed",
+        "timeout": undefined,
+        "timeoutMsg": undefined,
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
     Object {
       "type": "return",
       "value": undefined,

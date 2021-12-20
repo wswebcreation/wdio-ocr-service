@@ -10,6 +10,7 @@ describe('ocrSetValue', () => {
     const options = {
       isTesseractAvailable: true,
       ocrImagesPath: 'ocrImagesPath',
+      language: 'eng',
       reuseOcr: true,
       screenSize: { width: 1, height: 2 },
       text: 'text',

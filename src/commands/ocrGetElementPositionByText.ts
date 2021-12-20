@@ -10,6 +10,7 @@ interface OcrGetElementPositionByTextOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
   isTesseractAvailable: boolean;
+  language: string;
   ocrImagesPath: string;
   reuseOcr: boolean;
   screenSize: ScreenSize;
@@ -88,6 +89,7 @@ export default async function ocrGetElementPositionByText(
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
+    language,
     ocrImagesPath,
     reuseOcr,
     screenSize,
@@ -97,6 +99,7 @@ export default async function ocrGetElementPositionByText(
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
+    language,
     ocrImagesPath,
     reuseOcr,
     screenSize,

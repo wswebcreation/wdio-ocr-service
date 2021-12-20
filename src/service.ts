@@ -15,7 +15,7 @@ import {
 } from './typings/types'
 import ocrWaitForTextDisplayed from './commands/ocrWaitForTextDisplayed'
 import { isTesseractAvailable } from './utils/tesseract'
-import { OCR_IMAGES_PATH } from './utils/constants'
+import { OCR_IMAGES_PATH, SUPPORTED_LANGUAGES } from './utils/constants'
 
 export default class OcrService implements Services.ServiceInstance {
   private _ocrImagesPath = OCR_IMAGES_PATH
@@ -51,6 +51,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
@@ -68,6 +69,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           reuseOcr: !!reuseOcr,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
@@ -83,6 +85,7 @@ export default class OcrService implements Services.ServiceInstance {
         androidRectangles,
         iOSRectangles,
         isTesseractAvailable: tesseractAvailable,
+        language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
         reuseOcr: !!reuseOcr,
         ocrImagesPath: this._ocrImagesPath,
         screenSize,
@@ -99,6 +102,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           ocrImagesPath: this._ocrImagesPath,
           screenSize,
           text: selector,
@@ -117,6 +121,7 @@ export default class OcrService implements Services.ServiceInstance {
           androidRectangles,
           iOSRectangles,
           isTesseractAvailable: tesseractAvailable,
+          language: this._options.ocrLanguage || SUPPORTED_LANGUAGES.ENGLISH,
           ocrImagesPath: this._ocrImagesPath,
           reuseOcr: !!reuseOcr,
           screenSize,

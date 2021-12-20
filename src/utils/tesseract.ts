@@ -21,19 +21,20 @@ export function isTesseractAvailable(tesseractName: string = ''): boolean {
 
 interface GetOcrDataOptions {
   filePath: string;
+  language: string;
 }
 
 export async function getNodeOcrData(options: GetOcrDataOptions): Promise<GetOcrData|Error> {
   try {
-    const { filePath } = options
+    const { filePath, language } = options
     const jsonSingleWords: Words[] = []
     const jsonWordStrings: Line[] = []
     let composedBlocks: any = []
 
     const worker = createWorker()
     await worker.load()
-    await worker.loadLanguage('eng')
-    await worker.initialize('eng')
+    await worker.loadLanguage(language)
+    await worker.initialize(language)
     await worker.setParameters({
       tessedit_ocr_engine_mode: OEM.TESSERACT_LSTM_COMBINED,
       tessedit_pageseg_mode: PSM.AUTO,
@@ -125,13 +126,13 @@ export async function getNodeOcrData(options: GetOcrDataOptions): Promise<GetOcr
 
 export async function getSystemOcrData(options: GetOcrDataOptions): Promise<GetOcrData|Error> {
   try {
-    const { filePath } = options
+    const { filePath, language } = options
     const jsonSingleWords: Words[] = []
     const jsonWordStrings: Line[] = []
     let composedBlocks: any = []
     let text: string = ''
     const result = await recognize(filePath, {
-      lang: 'eng',
+      lang: language,
       oem: 1,
       // https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc
       psm: 3,

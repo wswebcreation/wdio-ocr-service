@@ -21,6 +21,7 @@ export interface DetermineClickPointOptions {
 
 export interface OcrServiceConfig {
   ocrImagesPath?: string;
+  ocrLanguage?: string;
 }
 
 export interface WaitForTextDisplayedOptions {

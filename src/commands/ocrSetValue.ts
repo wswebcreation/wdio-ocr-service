@@ -6,6 +6,7 @@ interface OcrSetValueOptions {
   androidRectangles?: Rectangles;
   iOSRectangles?: Rectangles;
   isTesseractAvailable: boolean;
+  language: string;
   reuseOcr: boolean;
   ocrImagesPath: string;
   screenSize: ScreenSize;
@@ -19,6 +20,7 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
+    language,
     reuseOcr,
     ocrImagesPath,
     screenSize,
@@ -31,6 +33,7 @@ export default async function ocrSetValue(options: OcrSetValueOptions): Promise<
     androidRectangles,
     iOSRectangles,
     isTesseractAvailable,
+    language,
     ocrImagesPath,
     reuseOcr,
     screenSize,

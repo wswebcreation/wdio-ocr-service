@@ -1,7 +1,7 @@
 import fs from 'fs'
 import WdioOcrService from '../index'
 import * as Tesseract from '../utils/tesseract'
-import { OCR_IMAGES_PATH } from '../utils/constants'
+import { OCR_IMAGES_PATH, SUPPORTED_LANGUAGES } from '../utils/constants'
 import OcrGetElementPositionByText from '../commands/ocrGetElementPositionByText'
 import OcrClickOnText from '../commands/ocrClickOnText'
 import OcrGetText from '../commands/ocrGetText'
@@ -94,8 +94,35 @@ describe('wdio-ocr-service', () => {
       expect(OcrGetElementPositionByText).toHaveBeenCalledWithSnapshot()
     })
 
+    it('should be able to call ocrGetElementPositionByText with no options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrGetElementPositionByText('foo')
+
+      expect(OcrGetElementPositionByText).toHaveBeenCalledWithSnapshot()
+    })
+
     it('should be able to call ocrGetElementPositionByText with all options', async () => {
       const service = new WdioOcrService()
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrGetElementPositionByText(
+        'foo',
+        {
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
+          reuseOcr: true
+        }
+      )
+
+      expect(OcrGetElementPositionByText).toHaveBeenCalledWithSnapshot()
+    })
+
+    it('should be able to call ocrGetElementPositionByText with all options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
 
       await service.before(caps, [], getDriver())
       // @ts-ignore
@@ -121,8 +148,35 @@ describe('wdio-ocr-service', () => {
       expect(OcrClickOnText).toHaveBeenCalledWithSnapshot()
     })
 
+    it('should be able to call ocrClickOnText with no options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrClickOnText('click')
+
+      expect(OcrClickOnText).toHaveBeenCalledWithSnapshot()
+    })
+
     it('should be able to call ocrClickOnText with all options', async () => {
       const service = new WdioOcrService()
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrClickOnText(
+        'click',
+        {
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
+          reuseOcr: true
+        }
+      )
+
+      expect(OcrClickOnText).toHaveBeenCalledWithSnapshot()
+    })
+
+    it('should be able to call ocrClickOnText with all options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
 
       await service.before(caps, [], getDriver())
       // @ts-ignore
@@ -148,6 +202,16 @@ describe('wdio-ocr-service', () => {
       expect(OcrGetText).toHaveBeenCalledWithSnapshot()
     })
 
+    it('should be able to call ocrGetText with no options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrGetText()
+
+      expect(OcrGetText).toHaveBeenCalledWithSnapshot()
+    })
+
     it('should be able to call ocrGetText with all options', async () => {
       const service = new WdioOcrService()
 
@@ -164,8 +228,34 @@ describe('wdio-ocr-service', () => {
       expect(OcrGetText).toHaveBeenCalledWithSnapshot()
     })
 
+    it('should be able to call ocrGetText with all options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrGetText(
+        {
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
+          reuseOcr: true
+        }
+      )
+
+      expect(OcrGetText).toHaveBeenCalledWithSnapshot()
+    })
+
     it('should be able to call ocrWaitForTextDisplayed with no options', async () => {
       const service = new WdioOcrService()
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrWaitForTextDisplayed('ocrWaitForTextDisplayed')
+
+      expect(OcrWaitForTextDisplayed).toHaveBeenCalledWithSnapshot()
+    })
+
+    it('should be able to call ocrWaitForTextDisplayed with no options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
 
       await service.before(caps, [], getDriver())
       // @ts-ignore
@@ -193,6 +283,25 @@ describe('wdio-ocr-service', () => {
       expect(OcrWaitForTextDisplayed).toHaveBeenCalledWithSnapshot()
     })
 
+    it('should be able to call ocrWaitForTextDisplayed with all options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrWaitForTextDisplayed(
+        'ocrWaitForTextDisplayed',
+        {
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
+          reuseOcr: true,
+          timeout: 15,
+          timeoutMsg: 'timeoutMsg',
+        }
+      )
+
+      expect(OcrWaitForTextDisplayed).toHaveBeenCalledWithSnapshot()
+    })
+
     it('should be able to call ocrSetValue with no options', async () => {
       const service = new WdioOcrService()
 
@@ -203,8 +312,36 @@ describe('wdio-ocr-service', () => {
       expect(OcrSetValue).toHaveBeenCalledWithSnapshot()
     })
 
+    it('should be able to call ocrSetValue with no options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrSetValue('ocrSetValue-selector', 'ocrSetValue')
+
+      expect(OcrSetValue).toHaveBeenCalledWithSnapshot()
+    })
+
     it('should be able to call ocrSetValue with all options', async () => {
       const service = new WdioOcrService()
+
+      await service.before(caps, [], getDriver())
+      // @ts-ignore
+      await service['_driver']?.ocrSetValue(
+        'ocrSetValue-selector',
+        'ocrSetValue',
+        {
+          androidRectangles: { foo: 'androidRectangles' },
+          iOSRectangles: { foo: 'iOSRectangles' },
+          reuseOcr: true
+        }
+      )
+
+      expect(OcrSetValue).toHaveBeenCalledWithSnapshot()
+    })
+
+    it('should be able to call ocrSetValue with all options and providing different language and images path', async () => {
+      const service = new WdioOcrService({ ocrImagesPath: './ocrImages', ocrLanguage: SUPPORTED_LANGUAGES.DUTCH })
 
       await service.before(caps, [], getDriver())
       // @ts-ignore
